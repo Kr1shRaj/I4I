@@ -231,8 +231,101 @@ CLASSES: list[dict] = [
     {
         "name": "crane",
         "display": "industrial crane",
+        "confusable": True,
+        "cluster": "hoist_crane_group",
+    },
+    # ── New 6 Machinery Classes ──────────────────────────────────────────────
+    {
+        "name": "edge_banding_machine",
+        "display": "edge banding machine",
+        "confusable": True,
+        "cluster": "edge_banding_group",
+    },
+    {
+        "name": "dust_collector",
+        "display": "industrial dust collector",
         "confusable": False,
         "cluster": None,
+    },
+    {
+        "name": "veneer_press",
+        "display": "veneer press machine",
+        "confusable": False,
+        "cluster": None,
+    },
+    {
+        "name": "drum_sander",
+        "display": "drum sander machine",
+        "confusable": True,
+        "cluster": "sanding_group",
+    },
+    {
+        "name": "mortiser",
+        "display": "mortising machine",
+        "confusable": False,
+        "cluster": None,
+    },
+    {
+        "name": "glue_spreader",
+        "display": "glue spreader machine",
+        "confusable": False,
+        "cluster": None,
+    },
+    # ── 6 Factory Infrastructure Classes ─────────────────────────────────────
+    {
+        "name": "pallet_jack",
+        "display": "pallet jack",
+        "confusable": False,
+        "cluster": None,
+    },
+    {
+        "name": "air_compressor",
+        "display": "industrial air compressor",
+        "confusable": False,
+        "cluster": None,
+    },
+    {
+        "name": "storage_racking",
+        "display": "warehouse storage racking",
+        "confusable": False,
+        "cluster": None,
+    },
+    {
+        "name": "robotic_arm",
+        "display": "industrial robotic arm",
+        "confusable": False,
+        "cluster": None,
+    },
+    {
+        "name": "overhead_hoist",
+        "display": "overhead electric hoist",
+        "confusable": True,
+        "cluster": "hoist_crane_group",
+    },
+    {
+        "name": "platform_scale",
+        "display": "industrial platform scale",
+        "confusable": False,
+        "cluster": None,
+    },
+    # ── 3 Small Safety Infrastructure Classes ────────────────────────────────
+    {
+        "name": "ppe_station",
+        "display": "PPE safety station cabinet",
+        "confusable": True,
+        "cluster": "safety_infra_group",
+    },
+    {
+        "name": "first_aid_station",
+        "display": "first aid station wall cabinet",
+        "confusable": True,
+        "cluster": "safety_infra_group",
+    },
+    {
+        "name": "emergency_exit_sign",
+        "display": "emergency exit sign illuminated",
+        "confusable": True,
+        "cluster": "safety_infra_group",
     },
 ]
 

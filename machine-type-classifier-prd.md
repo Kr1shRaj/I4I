@@ -45,15 +45,35 @@ This is a real build project, not a prototype or hackathon deliverable.
 18. Wood router / Spindle moulder
 19. Wood lathe
 
-**Boring and finishing (3):**
+**Boring and finishing (5):**
 20. Drill press
 21. Sanding machines
 22. CNC router
+23. Drum sander
+24. Mortiser
 
-**Auxiliary machines:**
-- Not yet defined. To be finalized before dataset generation begins for this group.
+**Auxiliary and specialized woodworking (4):**
+25. Edge banding machine
+26. Dust collector
+27. Veneer press
+28. Glue spreader
 
-**Total defined so far: 21 classes** (plus any auxiliary machines added later).
+**Plant infrastructure & material handling (11):**
+29. Crane
+30. Fire extinguisher
+31. Pallet jack
+32. Air compressor
+33. Storage racking
+34. Robotic arm
+35. Overhead hoist
+36. Platform scale
+37. PPE station
+38. First aid station
+39. Emergency exit sign
+
+*(Note: Hydraulic Press is included under Core industrial machines).*
+
+**Total defined so far: 38 classes.**
 
 ### 2.1 Known confusable clusters
 
@@ -61,6 +81,10 @@ These groups are visually similar enough that text-based filtering alone is expe
 - Cutting machines: table saw / band saw / miter saw / panel saw
 - Surfacing and shaping: planer / jointer / spindle moulder / wood lathe
 - CNC milling / milling / drilling / CNC router (functional and visual overlap)
+- Drum sander vs. Sanding machines (cylindrical drum vs. belt/disc/orbital)
+- Edge banding machine vs. CNC router / Panel saw (conveyor-fed flat bed shape at a distance)
+- Overhead hoist vs. Crane (standalone monorail/electric chain hoist vs. full bridge/gantry crane)
+- PPE station vs. Storage racking / Control panel (wall-mounted dispensing racks/cabinets)
 
 ---
 
