@@ -1,0 +1,285 @@
+{
+  "train": {
+    "list": "train_oversampled_9class.txt",
+    "entries": 3355,
+    "unique_images": 2371,
+    "positives": 1969,
+    "negatives": 402,
+    "missing_images": 0,
+    "missing_labels": 0,
+    "instances": {
+      "panel_saw": 247,
+      "hydraulic_press": 272,
+      "table_saw": 205,
+      "planer": 147,
+      "jointer": 204,
+      "band_saw": 303,
+      "miter_saw": 236,
+      "edge_banding_machine": 229,
+      "fire_extinguisher": 606
+    },
+    "images_per_class": {
+      "panel_saw": 245,
+      "hydraulic_press": 272,
+      "table_saw": 205,
+      "planer": 147,
+      "jointer": 204,
+      "band_saw": 302,
+      "miter_saw": 236,
+      "edge_banding_machine": 151,
+      "fire_extinguisher": 207
+    },
+    "area_bins": {
+      "panel_saw": {
+        "tiny<5%": 2,
+        "med5-50%": 157,
+        "large50-80%": 62,
+        "over>80%": 26
+      },
+      "hydraulic_press": {
+        "tiny<5%": 0,
+        "med5-50%": 121,
+        "large50-80%": 125,
+        "over>80%": 26
+      },
+      "table_saw": {
+        "tiny<5%": 0,
+        "med5-50%": 62,
+        "large50-80%": 108,
+        "over>80%": 35
+      },
+      "planer": {
+        "tiny<5%": 0,
+        "med5-50%": 40,
+        "large50-80%": 82,
+        "over>80%": 25
+      },
+      "jointer": {
+        "tiny<5%": 1,
+        "med5-50%": 70,
+        "large50-80%": 102,
+        "over>80%": 31
+      },
+      "band_saw": {
+        "tiny<5%": 1,
+        "med5-50%": 99,
+        "large50-80%": 155,
+        "over>80%": 48
+      },
+      "miter_saw": {
+        "tiny<5%": 1,
+        "med5-50%": 87,
+        "large50-80%": 96,
+        "over>80%": 52
+      },
+      "edge_banding_machine": {
+        "tiny<5%": 32,
+        "med5-50%": 89,
+        "large50-80%": 62,
+        "over>80%": 46
+      },
+      "fire_extinguisher": {
+        "tiny<5%": 263,
+        "med5-50%": 320,
+        "large50-80%": 21,
+        "over>80%": 2
+      }
+    },
+    "geometry": {
+      "self_intersecting": 5
+    },
+    "examples": {
+      "self_intersecting": [
+        "C:\\Users\\Tanushree_i4i\\Desktop\\ckaude\\Krish\\datasets\\9class\\train_9class\\labels\\img_edge_banding_machine_ddgs_00142_jpg.rf.ffdc3baa12ae463fb02ef528f028e859.txt:1",
+        "C:\\Users\\Tanushree_i4i\\Desktop\\ckaude\\Krish\\datasets\\9class\\train_9class\\labels\\img_fire_extinguisher_ddgs_00098_jpg.rf.d82c967860822ca07a9e0a50340bf55a.txt:7",
+        "C:\\Users\\Tanushree_i4i\\Desktop\\ckaude\\Krish\\datasets\\9class\\train_9class\\labels\\img_edge_banding_machine_ddgs_00122_jpg.rf.35464927d894b926f1815248130a3339.txt:1",
+        "C:\\Users\\Tanushree_i4i\\Desktop\\ckaude\\Krish\\datasets\\9class\\train_9class\\labels\\img_edge_banding_machine_ddgs_00221_jpg.rf.51bbaf834f90f3f3a7509452fd3c4e15.txt:1",
+        "C:\\Users\\Tanushree_i4i\\Desktop\\ckaude\\Krish\\datasets\\9class\\train_9class\\labels\\img_fire_extinguisher_ddgs_00113_jpg.rf.77d5ade1900dbab05d60ac268e02c098.txt:1"
+      ]
+    }
+  },
+  "val": {
+    "list": "valid_9class.txt",
+    "entries": 463,
+    "unique_images": 463,
+    "positives": 403,
+    "negatives": 60,
+    "missing_images": 0,
+    "missing_labels": 0,
+    "instances": {
+      "panel_saw": 53,
+      "hydraulic_press": 58,
+      "table_saw": 41,
+      "planer": 35,
+      "jointer": 39,
+      "band_saw": 64,
+      "miter_saw": 46,
+      "edge_banding_machine": 33,
+      "fire_extinguisher": 129
+    },
+    "images_per_class": {
+      "panel_saw": 53,
+      "hydraulic_press": 58,
+      "table_saw": 41,
+      "planer": 35,
+      "jointer": 39,
+      "band_saw": 64,
+      "miter_saw": 46,
+      "edge_banding_machine": 22,
+      "fire_extinguisher": 45
+    },
+    "area_bins": {
+      "panel_saw": {
+        "tiny<5%": 0,
+        "med5-50%": 36,
+        "large50-80%": 13,
+        "over>80%": 4
+      },
+      "hydraulic_press": {
+        "tiny<5%": 0,
+        "med5-50%": 28,
+        "large50-80%": 25,
+        "over>80%": 5
+      },
+      "table_saw": {
+        "tiny<5%": 1,
+        "med5-50%": 12,
+        "large50-80%": 16,
+        "over>80%": 12
+      },
+      "planer": {
+        "tiny<5%": 0,
+        "med5-50%": 9,
+        "large50-80%": 17,
+        "over>80%": 9
+      },
+      "jointer": {
+        "tiny<5%": 1,
+        "med5-50%": 20,
+        "large50-80%": 16,
+        "over>80%": 2
+      },
+      "band_saw": {
+        "tiny<5%": 0,
+        "med5-50%": 24,
+        "large50-80%": 32,
+        "over>80%": 8
+      },
+      "miter_saw": {
+        "tiny<5%": 0,
+        "med5-50%": 17,
+        "large50-80%": 20,
+        "over>80%": 9
+      },
+      "edge_banding_machine": {
+        "tiny<5%": 5,
+        "med5-50%": 15,
+        "large50-80%": 7,
+        "over>80%": 6
+      },
+      "fire_extinguisher": {
+        "tiny<5%": 63,
+        "med5-50%": 63,
+        "large50-80%": 2,
+        "over>80%": 1
+      }
+    },
+    "geometry": {},
+    "examples": {}
+  },
+  "test": {
+    "list": "test_9class.txt",
+    "entries": 496,
+    "unique_images": 496,
+    "positives": 431,
+    "negatives": 65,
+    "missing_images": 0,
+    "missing_labels": 0,
+    "instances": {
+      "panel_saw": 55,
+      "hydraulic_press": 58,
+      "table_saw": 46,
+      "planer": 37,
+      "jointer": 41,
+      "band_saw": 65,
+      "miter_saw": 52,
+      "edge_banding_machine": 55,
+      "fire_extinguisher": 147
+    },
+    "images_per_class": {
+      "panel_saw": 55,
+      "hydraulic_press": 58,
+      "table_saw": 46,
+      "planer": 37,
+      "jointer": 41,
+      "band_saw": 65,
+      "miter_saw": 52,
+      "edge_banding_machine": 31,
+      "fire_extinguisher": 46
+    },
+    "area_bins": {
+      "panel_saw": {
+        "tiny<5%": 0,
+        "med5-50%": 35,
+        "large50-80%": 10,
+        "over>80%": 10
+      },
+      "hydraulic_press": {
+        "tiny<5%": 2,
+        "med5-50%": 24,
+        "large50-80%": 23,
+        "over>80%": 9
+      },
+      "table_saw": {
+        "tiny<5%": 0,
+        "med5-50%": 12,
+        "large50-80%": 25,
+        "over>80%": 9
+      },
+      "planer": {
+        "tiny<5%": 0,
+        "med5-50%": 16,
+        "large50-80%": 15,
+        "over>80%": 6
+      },
+      "jointer": {
+        "tiny<5%": 0,
+        "med5-50%": 12,
+        "large50-80%": 25,
+        "over>80%": 4
+      },
+      "band_saw": {
+        "tiny<5%": 0,
+        "med5-50%": 24,
+        "large50-80%": 28,
+        "over>80%": 13
+      },
+      "miter_saw": {
+        "tiny<5%": 0,
+        "med5-50%": 17,
+        "large50-80%": 23,
+        "over>80%": 12
+      },
+      "edge_banding_machine": {
+        "tiny<5%": 15,
+        "med5-50%": 21,
+        "large50-80%": 11,
+        "over>80%": 8
+      },
+      "fire_extinguisher": {
+        "tiny<5%": 66,
+        "med5-50%": 76,
+        "large50-80%": 5,
+        "over>80%": 0
+      }
+    },
+    "geometry": {
+      "self_intersecting": 1
+    },
+    "examples": {
+      "self_intersecting": [
+        "C:\\Users\\Tanushree_i4i\\Desktop\\ckaude\\Krish\\datasets\\9class\\test_9class\\labels\\img_edge_banding_machine_ddgs_00244_jpg.rf.1280ea77b5171ca799f5f5e4e0d8674c.txt:1"
+      ]
+    }
+  }
+}

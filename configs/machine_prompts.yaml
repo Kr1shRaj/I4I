@@ -1,0 +1,24 @@
+# SAM 2.1 prompts for the fixed machines, per camera, in 1920x1080 (de-squeezed) pixel coordinates.
+# Used by scripts/tools/annotate_static_cameras.py. Boxes were read off reference frames:
+#   cam03: cctv_cam03-20260907-1653_f0009180, cctv_cam03-20260924-1441_f0009144
+#   cam05: cctv_cam05-20260925-1618_f0015588, cctv_cam05-20260928-1220_f0015840
+# Each instance: class id, one or more SAM box prompts (masks are unioned), and an "envelope" the mask is
+# clipped to (box), so SAM cannot spill onto neighbouring objects.
+classes: {panel_saw: 0, hydraulic_press: 1, edge_banding_machine: 7}
+
+cameras:
+  cam03:
+    sources: [ch03_20260907165321, ch03_20260924144142]
+    osd_boxes: [[20, 50, 560, 95], [1380, 950, 1600, 995]]   # burned-in clock / "Camera 03"
+    machines:
+      hydraulic_press:      {prompts: [[690, 110, 955, 305]],   envelope: [670, 95, 975, 330]}
+      edge_banding_machine: {prompts: [[1185, 255, 1615, 800]], envelope: [1165, 235, 1640, 820]}
+  cam05:
+    sources: [ch05_20260928130326, panel_saw_hydraulic_lift, working_panel_saw]
+    osd_boxes: [[20, 50, 560, 95], [1380, 950, 1600, 995]]   # burned-in clock / "Camera 05"
+    machines:
+      hydraulic_press:      {prompts: [[130, 470, 530, 800]],   envelope: [110, 450, 550, 820]}
+      edge_banding_machine: {prompts: [[1030, 290, 1395, 470]], envelope: [1010, 270, 1415, 490]}
+      # body, main table, fence and the part of the sliding carriage inside the box. A second carriage
+      # prompt ([680, 820, 1200, 1080]) was tried and removed: it grabbed floor, board stacks and loose panels.
+      panel_saw:            {prompts: [[930, 630, 1720, 1080]], envelope: [910, 610, 1740, 1080]}

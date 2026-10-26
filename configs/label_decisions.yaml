@@ -1,0 +1,408 @@
+# Label-fix decisions for the run8 rebuild (2026-10-21). Applied by scripts/tools/build_clean_9class_dataset.py.
+# Reviewed visually by Claude on overlay sheets (not by a human annotator); see docs/label_policy.md.
+
+edge_bander:
+  # Indices into edge_bander_proposals.json (175 polygons whose box covers > 80% of the image).
+  # accept: replace the old polygon with the SAM 2.1 proposal (machine on a plain/studio background).
+  accept: [3, 5, 7, 8, 9, 10, 12, 14, 16, 17, 18, 19, 21, 23, 24, 25, 26, 27, 31, 33, 34, 35, 38,
+           41, 46, 47, 48, 49, 51, 52, 54, 55, 56, 59, 62, 63, 66, 68, 77,
+           81, 82, 83, 84, 86, 87, 89, 99, 106, 108, 109, 110, 117,
+           124, 128, 129, 132, 133, 136, 139, 140, 141, 145, 146, 159, 165, 166, 167, 172]
+  # keep: genuine close-up, the machine really fills the frame; old polygon kept.
+  keep: [4, 6, 11, 13, 15, 20, 28, 30, 36, 43, 50, 53, 58, 65, 69, 70, 71, 75, 76, 79,
+         85, 90, 91, 92, 93, 94, 95, 97, 100, 101, 102, 104, 113, 115, 120, 122, 123,
+         144, 152, 153, 157, 158, 162, 168, 171, 173, 174]
+  # quarantine: neither label is right (collage, infographic strip, inset photos, floor/room included,
+  # several machines). The whole image is excluded until a human re-draws it.
+  quarantine: [0, 1, 2, 22, 29, 32, 37, 39, 40, 42, 44, 45, 57, 60, 61, 64, 67, 72, 73, 74, 78,
+               80, 88, 96, 98, 103, 105, 107, 111, 112, 114, 116, 118, 119,
+               121, 125, 126, 127, 130, 131, 134, 135, 137, 138,
+               142, 143, 147, 148, 149, 150, 151, 154, 155, 156,
+               160, 161, 163, 164, 169, 170]
+
+fire_extinguisher:
+  # Default for every image: instances rebuilt from source polygons by scripts/tools/label_instances.py
+  # (no morphological fusion of touching cylinders).
+  # sam_boxes: images where the rebuilt instances were wrong (speckle fragments, hands/brackets included);
+  # replaced by SAM 2.1 masks from these normalised boxes [x1, y1, x2, y2], one box per cylinder.
+  sam_boxes:
+    img_fire_extinguisher_ddgs_00058_jpg.rf.c06c6bb47167b0014f8067c53feef79a: [[0.24, 0.17, 1.0, 0.95]]
+    img_fire_extinguisher_ddgs_00064_jpg.rf.0d1d96dba2c9df5e5840a81a17fd152c: [[0.06, 0.12, 0.30, 0.92]]
+    img_fire_extinguisher_ddgs_00066_jpg.rf.2c4dd9fe43a0a9ff5e4be4966f5333cc: [[0.25, 0.38, 1.0, 1.0]]
+    img_fire_extinguisher_ddgs_00078_jpg.rf.de82b5afcaae2412c34dd592fa82ee5b: [[0.60, 0.33, 0.88, 1.0]]
+    img_fire_extinguisher_ddgs_00082_jpg.rf.2ca0918814996ece9300b60715ba86e8: [[0.10, 0.05, 0.38, 0.97]]
+    img_fire_extinguisher_ddgs_00096_jpg.rf.1bed498808c26f0ec651779ab959d5e0: [[0.13, 0.30, 0.32, 1.0], [0.22, 0.25, 0.50, 1.0], [0.33, 0.25, 0.75, 1.0]]
+    img_fire_extinguisher_ddgs_00113_jpg.rf.77d5ade1900dbab05d60ac268e02c098: [[0.17, 0.0, 0.85, 1.0]]
+    img_fire_extinguisher_ddgs_00117_jpg.rf.2a495cc46421890c8545510dfc69ceee: [[0.13, 0.0, 0.88, 0.92]]
+    img_fire_extinguisher_ddgs_00165_jpg.rf.ef742ab61ec3949c4969aae450f68563: [[0.42, 0.06, 0.78, 0.97]]
+    img_fire_extinguisher_ddgs_00166_jpg.rf.358b98bcf9df2e865e0dae43fb2adb0d: [[0.10, 0.0, 0.40, 1.0], [0.30, 0.40, 0.82, 1.0]]
+    img_fire_extinguisher_ddgs_00201_jpg.rf.a3a0f579f177effa39f2c9830308f9c5: [[0.02, 0.03, 1.0, 1.0]]
+    img_fire_extinguisher_ddgs_00210_jpg.rf.bab95121d30638bda310b923de0832a5: [[0.15, 0.02, 0.92, 0.98]]
+    img_fire_extinguisher_ddgs_00221_jpg.rf.d35d5ce451d14bb0db2e1ac775a31843: [[0.22, 0.0, 0.73, 1.0]]
+    img_fire_extinguisher_ddgs_00282_jpg.rf.62cf5c42c4738c1423c607efe0d5e4d1: [[0.34, 0.40, 0.52, 0.88], [0.48, 0.33, 0.62, 0.97], [0.58, 0.28, 0.68, 0.87], [0.63, 0.20, 0.74, 0.78]]
+    img_fire_extinguisher_ddgs_00284_jpg.rf.226d44474d1ee0c6e9cc7cc25ecfe290: [[0.15, 0.40, 0.90, 1.0]]
+  # quarantine: dense rows of overlapping, blurred cylinders where neither the source fragments nor box prompts
+  # give reliable per-cylinder masks. Excluded until a human annotates them.
+  quarantine:
+    - img_fire_extinguisher_ddgs_00071_jpg.rf.fcd24c10cd0ae1e163fe5ac878767937
+    - img_fire_extinguisher_ddgs_00015_jpg.rf.9efa34307d2775e647ec693de773c9ef
+    - img_fire_extinguisher_ddgs_00129_jpg.rf.f4b14552a480a9254e090e7721226027
+    - img_fire_extinguisher_ddgs_00290_jpg.rf.3260922f2d0355c41336a88b7a3813a8
+
+negatives:
+  # Screening of the empty-label (negative) images, 2026-10-21: scripts/tools/audit_negatives.py
+  # (run5 + run6 at conf 0.10 and contact sheets in label_fixes/negative_audit/), reviewed by Claude.
+  # quarantine: an unlabelled target machine is visible -> dropped from the negative lists.
+  quarantine:
+    img_dust_collector_ddgs_00198_jpg.rf.aced5100d649e8f457cc051c6e6df1d5: "benchtop planer + mitre saw on the bench, small"
+    img_glue_spreader_ddgs_00455_jpg.rf.9fba14de6de10ce4b295766434085a37: "sliding-table panel saw cut off at the right edge"
+    img_mortiser_ddgs_00244_jpg.rf.912be2dc99f501f6f825e15953118e6b: "horizontal band saw in the background"
+    img_wood_lathe_ddgs_00220_jpg.rf.24312787786f31bdc55a28c806f7a11c: "band saw behind the lathe, half hidden"
+    img_dust_collector_ddgs_00464_jpg.rf.48528eab47ab9a882f6ed6ffc9abdcad: "illustration: table saw, band saw, jointer, planer"
+  # Source classes never used as negatives. veneer_press (37): the factory press on Camera 03 is a
+  # woodworking hot/cold press that the CCTV benchmark labels hydraulic_press, so a veneer-press
+  # negative would teach that press to be background. Open decision: relabel them as hydraulic_press.
+  exclude_source_classes: [37]
+
+# User curation, 2026-10-21: the "datasetchange" file at the project root, parsed by
+# scripts/tools/parse_user_curation.py (-> label_fixes/user_curation.json).
+user_quarantine:
+  # "TO REMOVE FROM DATASET (CAUSE BAD IMAGE)": bad images, excluded from every split by the build.
+  # The image files stay in datasets/source_38class (never delete through the *_9class junctions).
+  stems:
+    - img_edge_banding_machine_ddgs_00010_jpg.rf.62cabec6db7b6b2af3e40124daf5b7b2  # train
+    - img_edge_banding_machine_ddgs_00019_jpg.rf.6273bc0502c34d827be429f06187bb2d  # train
+    - img_edge_banding_machine_ddgs_00044_jpg.rf.1e4df3dadfda6cc9f18e153cbb9cded5  # train
+    - img_edge_banding_machine_ddgs_00058_jpg.rf.0bd4a79b4b084cdb99d37d5b0c3e382e  # train
+    - img_edge_banding_machine_ddgs_00076_jpg.rf.dc589876806948f55d0d76afc7df224e  # train
+    - img_edge_banding_machine_ddgs_00081_jpg.rf.88f7802294eb7932f002777c565438fc  # train
+    - img_edge_banding_machine_ddgs_00137_jpg.rf.8bb0732579438083df0a6c14bc26678e  # train
+    - img_edge_banding_machine_ddgs_00143_jpg.rf.416b7baad8832e1218cd9cc501193a67  # train
+    - img_edge_banding_machine_ddgs_00144_jpg.rf.85b985862b951079d1132026a8f29f8a  # train
+    - img_edge_banding_machine_ddgs_00148_jpg.rf.39eb56deb21735f64846c130cd76f708  # train
+    - img_edge_banding_machine_ddgs_00169_jpg.rf.6d513fd4658d7cbfde2d11ee99bef291  # train
+    - img_edge_banding_machine_ddgs_00183_jpg.rf.27babede6ea58dca2f1b49f4f95440e7  # train
+    - img_edge_banding_machine_ddgs_00186_jpg.rf.53f8c04467c4885681070448bb0bac1b  # train
+    - img_edge_banding_machine_ddgs_00195_jpg.rf.1e1b210d40ae7ab955cebbfc230e6e79  # train
+    - img_edge_banding_machine_ddgs_00230_jpg.rf.51db0e7c90606ab7b203a86171ab0cc0  # train
+    - img_edge_banding_machine_ddgs_00231_jpg.rf.954b01199ddd2df59df2b69402cff644  # train
+    - img_edge_banding_machine_ddgs_00232_jpg.rf.6af3c53cb34731d24dbad957d8cad7dc  # train
+    - img_edge_banding_machine_ddgs_00235_jpg.rf.35f00dafb1163384b204b9a20aec1401  # train
+    - img_edge_banding_machine_ddgs_00238_jpg.rf.3af4cb93b3638278736b6cd7fc8dc271  # train
+    - img_edge_banding_machine_ddgs_00240_jpg.rf.9270b7f57968cb511a3642816cd4ea48  # train
+    - img_edge_banding_machine_ddgs_00241_jpg.rf.e294addedfc0b02d8c939028c3c491d5  # train
+    - img_edge_banding_machine_ddgs_00245_jpg.rf.8e798208dd8ff04875de853a6377a17b  # train
+    - img_edge_banding_machine_ddgs_00249_jpg.rf.254ba25359b51992f6b6bf38e1368abf  # train
+    - img_edge_banding_machine_ddgs_00250_jpg.rf.6c47f041d900b5b9aa3122c0c6e5ab98  # train
+    - img_edge_banding_machine_ddgs_00251_jpg.rf.88db8f1e5bddd8525f0066906673f057  # train
+    - img_edge_banding_machine_ddgs_00255_jpg.rf.a2b6c3d741447ebe6e8ff8c69c31d9c8  # train
+    - img_edge_banding_machine_ddgs_00434_jpg.rf.b4a2ad89f964399e926fc02681c52202  # train
+    - img_edge_banding_machine_ddgs_00476_jpg.rf.3ba77e0624b137b5e031a91195670808  # train
+    - img_edge_banding_machine_ddgs_00480_jpg.rf.ce4257fa724c5cf125b134a79ea7c6f7  # train
+    - img_edge_banding_machine_ddgs_00205_jpg.rf.9885d9b8473b07a890ef1851e7f7111c  # valid
+    - img_edge_banding_machine_ddgs_00440_jpg.rf.85130181fd6858dddacd0ce1533a2b32  # valid
+    - img_edge_banding_machine_ddgs_00426_jpg.rf.27a12384da4f20a99374cddb0a5114e7  # valid
+    - img_edge_banding_machine_ddgs_00024_jpg.rf.726e1c472bb41fde86a8d63e0611c385  # test
+    - img_edge_banding_machine_ddgs_00042_jpg.rf.6eec0407f7830cf1f6b8a345f1a5bb8b  # test
+    - img_edge_banding_machine_ddgs_00472_jpg.rf.7202faba9b27f69dd491eb13142f199d  # test
+    - img_edge_banding_machine_ddgs_00261_jpg.rf.f72b71c892216946bd71888fbbd21fdb  # test
+    - img_edge_banding_machine_ddgs_00252_jpg.rf.a59f761b3c4e8d2794d99147cae2281c  # test
+    - img_edge_banding_machine_ddgs_00246_jpg.rf.9294aad06cadc9379e199f755411073a  # test
+    - img_edge_banding_machine_ddgs_00237_jpg.rf.a8ab3f7004e8fbd7f5684c0e50d4c951  # test
+    - img_fire_extinguisher_ddgs_00069_jpg.rf.c0ce1a86a0b02c53aa8a9c6162207330  # train
+    - img_fire_extinguisher_ddgs_00113_jpg.rf.77d5ade1900dbab05d60ac268e02c098  # train
+    - img_fire_extinguisher_ddgs_00180_jpg.rf.23c3d4be844e66119ed9331596778121  # train
+    - img_fire_extinguisher_ddgs_00506_jpg.rf.84a49f708af742909b494a8a4fe2caef  # train
+    - img_fire_extinguisher_ddgs_00296_jpg.rf.a997830fe4a85945c0dec51c076a93ee  # train
+    - img_fire_extinguisher_ddgs_00304_jpg.rf.076cca2ca9629598660028062a10b3f1  # train
+    - img_fire_extinguisher_ddgs_00087_jpg.rf.0dfd1dd4baab7f4dbd3865d57d586fb9  # valid
+    - img_fire_extinguisher_ddgs_00097_jpg.rf.f4a01923abfdae2e3aaafe95745be6ef  # valid
+    - img_fire_extinguisher_ddgs_00185_jpg.rf.a0d900f8741554c4b497c08750ea359c  # valid
+    - img_fire_extinguisher_ddgs_00292_jpg.rf.486b48d273abc1bc26f394f90c80003a  # valid
+    - img_fire_extinguisher_ddgs_00068_jpg.rf.99b164fb6ff3f68775123770a06f6b10  # test
+    - img_fire_extinguisher_ddgs_00086_jpg.rf.987bdbaf37d6bcf90e3f1c332c8461d7  # test
+    - img_fire_extinguisher_ddgs_00214_jpg.rf.1821f7a2761887e57c4d5a9ffaf034a1  # test
+    - img_miter_saw_00168_c3ca777a8e_jpg.rf.154f1d5ab35432d57e0362265e3e0a49  # test
+    - img_miter_saw_ddgs_00302_jpg.rf.d636110fc39825faaa02389b06b02a2f  # test
+    - img_miter_saw_ddgs_00294_jpg.rf.d09620bc96cdd59c3e74115ebdfd7197  # test
+    - img_band_saw_00164_b977eb7bca_jpg.rf.a8c9acde1b645a7f8aec2f152bce7288  # train
+    - img_band_saw_00236_c5fadb15db_jpg.rf.962a08a333106cee211b02e1ac33f7e5  # train
+    - img_band_saw_00246_4e0e6c30f3_jpg.rf.25587548ff5c5f876601a982d118446d  # train
+    - img_band_saw_00247_04dabdbad6_jpg.rf.2fed2f1d2967f2a2ae727f5f446c647d  # train
+    - img_band_saw_00267_df8c40f6bc_jpg.rf.f7e82581e77321ae5d80394e410c6193  # train
+    - img_band_saw_00294_ddd3cecd57_jpg.rf.78713c319600d1bbfdb2a61e3112045a  # train
+    - img_band_saw_ddgs_00336_jpg.rf.c836bb15037810602597e4f3327f3397  # train
+    - img_band_saw_ddgs_00382_jpg.rf.58d7782bc517c277a94c01875d8b77ef  # train
+    - img_band_saw_ddgs_00467_jpg.rf.bebcd3c5bbba2a6f2cd9d3e2efe7b4ae  # train
+    - img_band_saw_ddgs_00495_jpg.rf.a006f0f75927d1e5d237eec02e773b10  # train
+    - img_band_saw_ddgs_00484_jpg.rf.674b18b77ba1706427c462ea761c8b30  # train
+    - img_band_saw_ddgs_00497_jpg.rf.f0717488dc55a2c0889f276250fdb4c1  # valid
+    - img_band_saw_ddgs_00517_jpg.rf.894f85b2a6ac836a04443426e033be11  # valid
+    - img_band_saw_00229_e280e72e76_jpg.rf.9cffe0ffc44975a3396b52cfc97df336  # test
+    - img_band_saw_00244_af07f7e38a_jpg.rf.105798397dac5d254971422da4675913  # test
+    - img_band_saw_ddgs_00506_jpg.rf.c50b4ea1dcc85b7f1c772cf194f11ce7  # test
+    - img_band_saw_ddgs_00503_jpg.rf.159e8d47e54b4e3e0703b7cc859b29dd  # test
+    - img_jointer_00193_f7e06b97d9_jpg.rf.f3d55c278720f38aa82512905c6c4c70  # train
+    - img_jointer_00190_e3dcb1cd0d_jpg.rf.4b96875bbe4a2c73facbda67f15f432d  # train
+    - img_jointer_00195_b0e28f7cce_jpg.rf.98684ad0d63141a85df13ed7d7090fcf  # train
+    - img_jointer_00206_03e88e3bdb_jpg.rf.1b29345f0e89c648e92a0168b6746876  # train
+    - img_jointer_00216_af8ec1682b_jpg.rf.8bae48a7785d249d92a9ac892be8395f  # train
+    - img_jointer_00244_8bd9ca7e7a_jpg.rf.358b7be1054e419f13b1f68c4dffd38c  # valid
+    - img_jointer_ddgs_00200_jpg.rf.392157837718dbdbcdc441a50caae320  # valid
+    - img_jointer_00219_01e8f50be1_jpg.rf.3c7da3cb3faec255708cc7e86c0fe3d6  # test
+
+user_fixes:
+  # "TO FIX ANNOTATIONS": all of the image's target labels are replaced by SAM 2.1 L masks from these reviewed
+  # boxes [class, x1, y1, x2, y2] (normalised), clipped to the box (scripts/tools/fix_user_labels.py propose ->
+  # label_fixes/user_fix_polygons.json, which the build reads). Reviewed by Claude, not a human annotator.
+  # "rect": genuine close-up, the box itself is the polygon. "+class": merged into the previous instance.
+  # "exclude": no target machine in the image, so it leaves the build like user_quarantine.
+  img_edge_banding_machine_ddgs_00005_jpg.rf.ba847895d15f022d6cea8cef2e220217:  # #0
+    - [edge_banding_machine, 0.00, 0.17, 0.95, 0.92]
+  img_edge_banding_machine_ddgs_00007_jpg.rf.69ba28562a9e7c3001a0a705e8535962:  # #1
+    - [edge_banding_machine, 0.02, 0.06, 0.98, 0.93]
+  img_edge_banding_machine_ddgs_00008_jpg.rf.20fe945af7b51a304bb6002b35f43249:  # #2
+    - [edge_banding_machine, 0.00, 0.00, 1.00, 1.00, rect]
+  img_edge_banding_machine_ddgs_00011_jpg.rf.1b41137d0dc9890821438877461cb3fe:  # #3
+    - [edge_banding_machine, 0.00, 0.37, 0.99, 0.77]
+  img_edge_banding_machine_ddgs_00034_jpg.rf.178e53ec3a7845edb25ebe88cd89fca8:  # #4
+    - [edge_banding_machine, 0.00, 0.00, 1.00, 1.00]
+  img_edge_banding_machine_ddgs_00031_jpg.rf.7ff8e9d0329aec75c002ff1271a0dcff:  # #5
+    - [edge_banding_machine, 0.00, 0.10, 1.00, 0.68]
+  img_edge_banding_machine_ddgs_00039_jpg.rf.0e4b8f98427e7d9ed586e4732d20e9e9:  # #6
+    - [edge_banding_machine, 0.27, 0.17, 0.99, 0.46]
+  img_edge_banding_machine_ddgs_00048_jpg.rf.97e980111aa04283458b3e454722d070:  # #7
+    - [edge_banding_machine, 0.00, 0.19, 1.00, 0.78]
+  img_edge_banding_machine_ddgs_00056_jpg.rf.50ef2b075536a87f7a27bf5a18399c14:  # #8
+    - [edge_banding_machine, 0.00, 0.20, 0.97, 0.70]
+  img_edge_banding_machine_ddgs_00063_jpg.rf.39a20af89de470034b365e4db72681a2:  # #9
+    - [edge_banding_machine, 0.00, 0.12, 0.97, 0.90]
+  img_edge_banding_machine_ddgs_00069_jpg.rf.3799f219398ab682895b8de5fae57c13:  # #10
+    - [edge_banding_machine, 0.00, 0.00, 1.00, 1.00, rect]
+  img_edge_banding_machine_ddgs_00083_jpg.rf.d7fe141230754e6e6654b4274e31de67:  # #11
+    - [edge_banding_machine, 0.00, 0.05, 1.00, 0.93]
+  img_edge_banding_machine_ddgs_00118_jpg.rf.7890cd3402b65b2831e7e3b884950b3a:  # #12
+    - [edge_banding_machine, 0.15, 0.00, 0.94, 0.97]
+  img_edge_banding_machine_ddgs_00134_jpg.rf.f6240b6c0ffa0132dd3542ce471588d4:  # #13
+    - [edge_banding_machine, 0.00, 0.22, 0.98, 0.86]
+  img_edge_banding_machine_ddgs_00136_jpg.rf.ab97e23f4881bb183984d47df0e52f34:  # #14
+    - [edge_banding_machine, 0.00, 0.12, 0.99, 0.79]
+  img_edge_banding_machine_ddgs_00141_jpg.rf.eb3c83dea7072a72f704cfb92272a427:  # #15
+    - [edge_banding_machine, 0.00, 0.25, 1.00, 0.80]
+  img_edge_banding_machine_ddgs_00170_jpg.rf.1c586e2c7ab6771debe14f4d7565a55d:  # #16
+    - [edge_banding_machine, 0.00, 0.13, 1.00, 0.90]
+  img_edge_banding_machine_ddgs_00172_jpg.rf.0032c10cbace86ba27de460178c85d44:  # #17
+    - [edge_banding_machine, 0.00, 0.10, 0.99, 0.90]
+  img_edge_banding_machine_ddgs_00181_jpg.rf.2e94aff12a45509fe4dab836d9a4e87c:  # #18
+    - [edge_banding_machine, 0.03, 0.25, 0.99, 0.67]
+  img_edge_banding_machine_ddgs_00187_jpg.rf.ec6369656f46648a326a8a2cdf52f101:  # #19
+    - [edge_banding_machine, 0.00, 0.00, 1.00, 1.00, rect]
+  img_edge_banding_machine_ddgs_00188_jpg.rf.16d76dc73f31b6e2dae3918bfb1a38b6:  # #20
+    - [edge_banding_machine, 0.00, 0.13, 0.93, 0.97]
+  img_edge_banding_machine_ddgs_00191_jpg.rf.7c67a50d34f71bb7b1f4fb59cc3a05ce:  # #21
+    - [edge_banding_machine, 0.00, 0.28, 0.99, 0.72]
+  img_edge_banding_machine_ddgs_00197_jpg.rf.58d0335d1cb3577f97b222650dcaf9f6:  # #22
+    - [edge_banding_machine, 0.00, 0.22, 0.99, 0.80]
+  img_edge_banding_machine_ddgs_00203_jpg.rf.e9c72d6366f57bd650b68bec4e5c2e0c:  # #23
+    - [edge_banding_machine, 0.00, 0.07, 0.97, 0.95]
+  img_edge_banding_machine_ddgs_00209_jpg.rf.ba6692c7d2261952705d75004eb54efe:  # #24
+    - [edge_banding_machine, 0.00, 0.47, 0.88, 0.94]
+  img_edge_banding_machine_ddgs_00216_jpg.rf.9e7e321fff9993b904aa9421f856e31f:  # #25
+    - [edge_banding_machine, 0.02, 0.43, 0.99, 0.65]
+  img_edge_banding_machine_ddgs_00218_jpg.rf.a52113c1723d62e1008be75412a12492:  # #26
+    - [edge_banding_machine, 0.02, 0.22, 0.62, 0.80]
+    - [+edge_banding_machine, 0.55, 0.28, 0.97, 0.76]
+  img_edge_banding_machine_ddgs_00221_jpg.rf.51bbaf834f90f3f3a7509452fd3c4e15:  # #27
+    - [edge_banding_machine, 0.25, 0.22, 0.88, 0.80]
+  img_edge_banding_machine_ddgs_00260_jpg.rf.ba1cc4f5fa049a400ac037050c38ae2c:  # #28
+    - [edge_banding_machine, 0.00, 0.00, 1.00, 1.00, rect]
+  img_edge_banding_machine_ddgs_00318_jpg.rf.d6161fcbe1558d9dda2e3f0ee9addf68:  # #29
+    - [edge_banding_machine, 0.00, 0.36, 1.00, 0.72]
+    - [+edge_banding_machine, 0.08, 0.30, 0.45, 0.60]
+  img_edge_banding_machine_ddgs_00319_jpg.rf.72292acc440deaf9fa4168f8bb33642f:  # #30
+    - [edge_banding_machine, 0.00, 0.22, 0.99, 0.77]
+  img_edge_banding_machine_ddgs_00330_jpg.rf.0951c6f689593eaed8983a4ac3297654:  # #31
+    - [edge_banding_machine, 0.14, 0.33, 0.88, 0.70]
+  img_edge_banding_machine_ddgs_00359_jpg.rf.d71b21068551868a8c4a891439426320:  # #32
+    - [edge_banding_machine, 0.00, 0.21, 0.99, 0.85]
+  img_edge_banding_machine_ddgs_00432_jpg.rf.6ffa069aeb7f95022c5bd3debb43a7ab:  # #33
+    - [edge_banding_machine, 0.00, 0.00, 1.00, 1.00, rect]
+  img_edge_banding_machine_ddgs_00433_jpg.rf.10d8f9dd4961758fecd93bbc7f030c7a:  # #34
+    - [edge_banding_machine, 0.00, 0.00, 1.00, 1.00, rect]
+  img_edge_banding_machine_ddgs_00441_jpg.rf.fb27da46ac73d073668cf3dc4d169f64:  # #35
+    - [edge_banding_machine, 0.00, 0.32, 0.98, 0.69]
+  img_edge_banding_machine_ddgs_00446_jpg.rf.eab6839e15679763c817b0b8ce330111:  # #36
+    - [edge_banding_machine, 0.00, 0.05, 1.00, 1.00]
+  img_edge_banding_machine_ddgs_00463_jpg.rf.4a0050e193e4249fdee94e1106c0fa11:  # #37
+    - [edge_banding_machine, 0.04, 0.15, 0.97, 0.39]
+    - [edge_banding_machine, 0.02, 0.48, 0.98, 0.70]
+  img_edge_banding_machine_ddgs_00465_jpg.rf.3958d3ce44f170179b3e758883a41ff3:  # #38
+    - [edge_banding_machine, 0.02, 0.22, 0.97, 0.62]
+  img_edge_banding_machine_ddgs_00469_jpg.rf.290db6b72f1c90b02c8fd71dc786453f:  # #39
+    - [edge_banding_machine, 0.00, 0.00, 0.97, 1.00]
+  img_edge_banding_machine_ddgs_00473_jpg.rf.6fc19efa6505910753980fae376c1b06: exclude  # #40 PVC edge-tape extrusion line infographic, no edge bander
+  img_edge_banding_machine_ddgs_00484_jpg.rf.2cd86a8f3d200b9515685d98b5655ebd:  # #41
+    - [edge_banding_machine, 0.00, 0.25, 0.70, 0.65]
+    - [+edge_banding_machine, 0.15, 0.35, 1.00, 1.00]
+  img_edge_banding_machine_ddgs_00525_jpg.rf.d33cfb729ac4013b6e633f7acd42b806:  # #42
+    - [edge_banding_machine, 0.00, 0.00, 1.00, 0.92]
+  img_edge_banding_machine_ddgs_00043_jpg.rf.9467cef83147de5ea2db61def5337c47:  # #43
+    - [edge_banding_machine, 0.04, 0.24, 0.97, 0.88]
+  img_edge_banding_machine_ddgs_00071_jpg.rf.6e48075959128ade907bd5c263738db2:  # #44
+    - [edge_banding_machine, 0.02, 0.04, 0.98, 0.53]
+  img_edge_banding_machine_ddgs_00078_jpg.rf.124f3b0915af536695eb146ce1c8fd85:  # #45
+    - [edge_banding_machine, 0.00, 0.00, 1.00, 1.00, rect]
+  img_edge_banding_machine_ddgs_00079_jpg.rf.2038ef642122c3ef3dd7d8fc39218da2:  # #46
+    - [edge_banding_machine, 0.15, 0.17, 0.86, 0.82]
+  img_edge_banding_machine_ddgs_00002_jpg.rf.d04afcbe2b1bd4166e062596eb9f1db3:  # #47
+    - [edge_banding_machine, 0.00, 0.00, 1.00, 0.94, rect]
+  img_edge_banding_machine_ddgs_00013_jpg.rf.f78801439beecd8038407447c233e6c2:  # #48
+    - [edge_banding_machine, 0.02, 0.20, 0.98, 0.45]
+  img_edge_banding_machine_ddgs_00017_jpg.rf.b5c5c4cf45af4e224233cb4f72955598:  # #49
+    - [edge_banding_machine, 0.00, 0.38, 1.00, 0.69]
+  img_edge_banding_machine_ddgs_00046_jpg.rf.e1bb2243325f230283a8c82c47585ae0:  # #50
+    - [edge_banding_machine, 0.08, 0.27, 0.89, 0.70]
+  img_edge_banding_machine_ddgs_00049_jpg.rf.ac4338860940da37ec49d0f52e8f1a39:  # #51
+    - [edge_banding_machine, 0.13, 0.15, 1.00, 1.00]
+  img_edge_banding_machine_ddgs_00054_jpg.rf.7b31bdbd15b8ce9e0e8a1cb0595a0daf:  # #52
+    - [edge_banding_machine, 0.13, 0.10, 1.00, 0.80]
+  img_edge_banding_machine_ddgs_00057_jpg.rf.64c9ca0917561b9a247cd6e68745be70:  # #53
+    - [edge_banding_machine, 0.01, 0.26, 0.99, 0.74]
+  img_edge_banding_machine_ddgs_00059_jpg.rf.496c6d22280b846982ae919fe4bb7624:  # #54
+    - [edge_banding_machine, 0.00, 0.10, 0.97, 0.90]
+  img_edge_banding_machine_ddgs_00092_jpg.rf.51ae4607abd3828fad8444eae0123afb:  # #55
+    - [edge_banding_machine, 0.45, 0.15, 1.00, 0.93]
+  img_edge_banding_machine_ddgs_00107_jpg.rf.9681fdcdfc183740471a74ff57569866:  # #56
+    - [edge_banding_machine, 0.22, 0.17, 1.00, 1.00]
+  img_edge_banding_machine_ddgs_00120_jpg.rf.a408e45b3f0008ecd4f3affe1a72bbfe:  # #57
+    - [edge_banding_machine, 0.12, 0.18, 0.80, 0.73]
+    - [+edge_banding_machine, 0.13, 0.30, 0.27, 0.65]
+  img_edge_banding_machine_ddgs_00127_jpg.rf.0d03695735389f4ba169d969351e4405:  # #58
+    - [edge_banding_machine, 0.00, 0.40, 0.93, 0.78]
+  img_edge_banding_machine_ddgs_00133_jpg.rf.f261d5bc8fce88717e8e63a9b8154522:  # #59
+    - [edge_banding_machine, 0.00, 0.32, 0.99, 0.63]
+  img_edge_banding_machine_ddgs_00160_jpg.rf.0ef50cc88198fd9912829ac7fc6f41aa:  # #60
+    - [edge_banding_machine, 0.09, 0.29, 0.92, 0.84]
+  img_edge_banding_machine_ddgs_00457_jpg.rf.2bcb289f6b840894bc8f044f8bb62d41: exclude  # #61 collage of roller conveyors, no edge bander
+  img_edge_banding_machine_ddgs_00074_jpg.rf.2930eb7d657fa49175fa6f63855fbf4c:  # #62
+    - [edge_banding_machine, 0.00, 0.00, 1.00, 1.00, rect]
+  img_miter_saw_00033_661759d6f3_jpg.rf.fadfffd81a85fbaec52456f62b13c3d6:  # #63
+    - [miter_saw, 0.00, 0.00, 0.99, 1.00, fg]
+  img_miter_saw_ddgs_00244_jpg.rf.709303e1200bf83f19e8b0f8fc45c77d:  # #64
+    - [miter_saw, 0.00, 0.00, 1.00, 0.97]
+  img_miter_saw_ddgs_00254_jpg.rf.1a3d83c28a268d180821e65137686460:  # #65
+    - [miter_saw, 0.01, 0.05, 0.48, 0.47]
+    - [miter_saw, 0.51, 0.05, 0.99, 0.47]
+    - [miter_saw, 0.10, 0.52, 0.46, 0.97]
+    - [miter_saw, 0.58, 0.52, 0.98, 0.97]
+  img_miter_saw_ddgs_00305_jpg.rf.4e3b13a8c5e1d35d1b1a7af10daf1bd3:  # #66
+    - [miter_saw, 0.00, 0.00, 0.99, 0.92]
+  img_miter_saw_ddgs_00355_jpg.rf.5256566fc092b9fa231de8c758354007:  # #67
+    - [miter_saw, 0.00, 0.00, 1.00, 1.00]
+  img_miter_saw_ddgs_00371_jpg.rf.ed40c1400d7599476225bea800b6bce5:  # #68
+    - [miter_saw, 0.00, 0.12, 0.99, 0.99]
+  img_miter_saw_00048_77ee4e5417_jpg.rf.8ac2db29c8508ba6737b4475651c3172:  # #69
+    - [miter_saw, 0.00, 0.00, 1.00, 0.98, fg]
+  img_miter_saw_ddgs_00317_jpg.rf.8da5d94a3d1bf6d01e8afa817914ce74:  # #70
+    - [miter_saw, 0.00, 0.00, 1.00, 1.00, rect]
+  img_band_saw_00000_8c43e6e92d_jpg.rf.0938ed2a62d9d8456e7dc98c5fd8c036:  # #71
+    - [band_saw, 0.00, 0.00, 0.99, 0.99, fg]
+  img_band_saw_00009_09ae09a0f4_jpg.rf.bbee616dbf5c41fdc9f43df8ff37e6ae:  # #72
+    - [band_saw, 0.00, 0.00, 1.00, 0.99, fg]
+  img_band_saw_00057_d38b515c37_jpg.rf.344ec3862c3c85b32c5d12c3ca568ddb:  # #73
+    - [band_saw, 0.05, 0.06, 0.93, 0.83]
+  img_band_saw_00163_f3b096b049_jpg.rf.e449b99664ee5d99a9d5c506946f6a93:  # #74
+    - [band_saw, 0.00, 0.03, 1.00, 0.97, fg]
+  img_band_saw_00358_5a2ebd4253_jpg.rf.8fae43e0362e3d80444466f23d4902c8:  # #75
+    - [band_saw, 0.00, 0.02, 0.98, 1.00]
+  img_band_saw_00353_dcd9abbde9_jpg.rf.d9808b4008e1ff27dd6d1827150fd407:  # #76
+    - [band_saw, 0.00, 0.00, 1.00, 1.00, fg]
+  img_band_saw_ddgs_00455_jpg.rf.b535f5d65df9bf3bbc986415b6ed50c4:  # #77
+    - [band_saw, 0.00, 0.00, 0.99, 0.99, fg]
+  img_band_saw_ddgs_00511_jpg.rf.9ae3baaa2d465902df0b9bdb8cd7d336:  # #78
+    - [band_saw, 0.00, 0.00, 1.00, 0.99]
+  img_band_saw_ddgs_00485_jpg.rf.26e5b7950a8deaefdcc12493a60b3ad6:  # #79
+    - [band_saw, 0.00, 0.00, 1.00, 0.98]
+  img_band_saw_ddgs_00457_jpg.rf.8ef01cf1e00fd81f4fbaa3402fa9d567:  # #80
+    - [band_saw, 0.00, 0.00, 1.00, 0.99, fg]
+  img_band_saw_00208_0313577fe6_jpg.rf.c4f43ea05187b4e4280ae008457f09b0:  # #81
+    - [band_saw, 0.00, 0.00, 1.00, 1.00]
+  img_band_saw_00274_255b93a2cd_jpg.rf.841271d073fd1c6f682a0cbc20f5e53f:  # #82
+    - [band_saw, 0.02, 0.00, 1.00, 1.00, fg]
+  img_jointer_00086_6ba223f38b_jpg.rf.caaaa7cc417bb83a7058020dde3c1686:  # #83
+    - [jointer, 0.00, 0.52, 0.63, 1.00]
+    - [jointer, 0.07, 0.34, 0.80, 0.97]
+  img_jointer_ddgs_00225_jpg.rf.be040f34ac6907f9e48de97a7c2627b6:  # #84
+    - [jointer, 0.28, 0.35, 0.85, 1.00]
+    - [+jointer, 0.00, 0.25, 0.85, 0.55]
+  img_jointer_ddgs_00245_jpg.rf.f0b16b410a5ef8f3e7f68606232952ed:  # #85
+    - [jointer, 0.00, 0.08, 1.00, 1.00]
+  img_jointer_ddgs_00248_jpg.rf.5c2536f10d00d055a8a399149ed2b9fc:  # #86
+    - [jointer, 0.00, 0.00, 1.00, 1.00, fg]
+  img_jointer_ddgs_00256_jpg.rf.d97424446a650927fc5ad01ccec6bf69:  # #87
+    - [jointer, 0.00, 0.00, 1.00, 0.99, fg]
+  img_jointer_ddgs_00334_jpg.rf.afb9c8304f30dd4f8c138e535e67bbd4:  # #88
+    - [jointer, 0.00, 0.06, 1.00, 1.00]
+  img_jointer_00105_8674320754_jpg.rf.fe02ea50689b8fca43155465f19226d7:  # #89
+    - [jointer, 0.01, 0.06, 0.46, 0.38]
+    - [jointer, 0.53, 0.07, 0.98, 0.39]
+    - [jointer, 0.11, 0.49, 0.42, 1.00]
+    - [jointer, 0.52, 0.62, 0.98, 0.92]
+  img_jointer_00112_5d38518ac1_jpg.rf.0a544f84f98bb855ad2ff73157c81739:  # #90
+    - [jointer, 0.12, 0.31, 0.53, 0.78]
+    - [planer, 0.46, 0.21, 0.84, 0.86]
+  img_jointer_ddgs_00193_jpg.rf.861edf39d9de32744aceb84fe08c81b7:  # #91
+    - [jointer, 0.00, 0.00, 1.00, 0.98, fg]
+  img_planer_00000_689eb90f78_jpg.rf.e0a45b2ff96190e9793023636671c893:  # #92
+    - [planer, 0.04, 0.00, 0.98, 1.00]
+  img_planer_00001_06ba9e380f_jpg.rf.54bd348d504c0ec70c6a3cb6c31d0120:  # #93
+    - [planer, 0.00, 0.00, 1.00, 0.99]
+  img_planer_00023_bed908031d_jpg.rf.8a5a9cd1a58c5f27ac2b7e913e1d6e9b:  # #94
+    - [planer, 0.00, 0.00, 1.00, 0.99, fg]
+  img_planer_00070_0950a75732_jpg.rf.7d0a0ae473585874fb646f1b8dace1fd:  # #95
+    - [planer, 0.00, 0.00, 1.00, 1.00, rect]
+  img_planer_ddgs_00160_jpg.rf.bfa6ea5a6647b42b266c0e67605dc0c6:  # #96
+    - [planer, 0.52, 0.05, 0.96, 0.62]
+    - [planer, 0.05, 0.40, 0.49, 0.96]
+  img_planer_ddgs_00289_jpg.rf.4e8a77d8a2ad880bbfbcf400fed57b4a:  # #97
+    - [planer, 0.00, 0.00, 1.00, 0.98, fg]
+  img_planer_00101_27d9dec45b_jpg.rf.c6bf64f3ba4cb6a8b1633639244afd7f:  # #98
+    - [planer, 0.42, 0.25, 0.95, 0.58]
+  img_planer_00048_b8ab569069_jpg.rf.eee5741341e32c4f84f08efb93726d71:  # #99
+    - [planer, 0.31, 0.20, 0.97, 0.99]
+    - [planer, 0.00, 0.03, 0.33, 0.50]
+    - [planer, 0.00, 0.51, 0.34, 0.98]
+  img_planer_ddgs_00205_jpg.rf.005ff1c99d40a7669e879c2301b02602:  # #100
+    - [planer, 0.00, 0.26, 0.42, 0.75]
+    - [planer, 0.38, 0.20, 0.76, 0.62]
+    - [planer, 0.73, 0.20, 1.00, 0.55]
+  img_table_saw_00139_022b974180_jpg.rf.c0e4101617146f9063be46346e98c3a9:  # #101
+    - [table_saw, 0.05, 0.10, 1.00, 1.00, rect]
+  img_table_saw_00144_c885e961cb_jpg.rf.563c3e42e254d8e64a23668472a73c07:  # #102
+    - [table_saw, 0.00, 0.56, 1.00, 1.00]
+    - [+table_saw, 0.00, 0.55, 0.45, 0.80]
+  img_table_saw_00234_34dec3c713_jpg.rf.049eb8a1c6c53f906780b7f3b28e6bab:  # #103
+    - [table_saw, 0.12, 0.16, 0.78, 0.43]
+    - [+table_saw, 0.12, 0.30, 0.45, 0.45]
+  img_table_saw_00237_39dd1b573f_jpg.rf.204c4c1f7c67763149ede7264397fee3:  # #104
+    - [table_saw, 0.45, 0.20, 0.92, 0.45]
+    - [miter_saw, 0.15, 0.06, 0.42, 0.33]
+  img_table_saw_00251_8601c0b5eb_jpg.rf.39db75b211ad14eb8f00d0d6f5670c53:  # #105
+    - [table_saw, 0.00, 0.00, 1.00, 0.99]
+  img_table_saw_00328_f78e6ab173_jpg.rf.11b362953521bfa0e96805adc7c3c888:  # #106
+    - [table_saw, 0.35, 0.30, 1.00, 0.80]
+  img_table_saw_00373_464eb63114_jpg.rf.573f9f9da9605f986db82eec316c3021:  # #107
+    - [table_saw, 0.08, 0.33, 0.42, 0.75]
+    - [table_saw, 0.40, 0.30, 0.70, 0.64]
+    - [table_saw, 0.64, 0.27, 0.90, 0.56]
+  img_table_saw_ddgs_00314_jpg.rf.cb0be10df9a9c106499ad1c133f1d18d:  # #108
+    - [table_saw, 0.00, 0.03, 0.93, 0.25]
+    - [+table_saw, 0.00, 0.20, 0.28, 0.95]
+  img_table_saw_ddgs_00418_jpg.rf.f43c09071f7b0bfd0e9db814a1610199:  # #109
+    - [table_saw, 0.00, 0.05, 1.00, 0.99, fg]
+  img_table_saw_00340_028fd03754_jpg.rf.e75a64e6afd776ebbd450916476b069a:  # #110
+    - [table_saw, 0.10, 0.43, 0.41, 0.67]
+    - [miter_saw, 0.39, 0.23, 0.57, 0.42]
+  img_table_saw_00016_91228a230d_jpg.rf.fdb7cec557f94cb06888fec5daf910b8:  # #111
+    - [table_saw, 0.00, 0.00, 1.00, 1.00]
+  img_table_saw_00209_fc097e8291_jpg.rf.cb995e18fff77ff03ba23b47d00c61b8: exclude  # #112 table saw under 40% visible (only the sled and top edge)

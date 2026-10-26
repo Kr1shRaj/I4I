@@ -1,0 +1,283 @@
+  img_edge_banding_machine_ddgs_00005_jpg.rf.ba847895d15f022d6cea8cef2e220217:  # #0
+    - [edge_banding_machine, 0.00, 0.00, 0.98, 0.98]
+  img_edge_banding_machine_ddgs_00007_jpg.rf.69ba28562a9e7c3001a0a705e8535962:  # #1
+    - [edge_banding_machine, 0.01, 0.01, 1.00, 0.97]
+  img_edge_banding_machine_ddgs_00008_jpg.rf.20fe945af7b51a304bb6002b35f43249:  # #2
+    - [edge_banding_machine, 0.68, 0.00, 0.88, 0.32]
+    - [edge_banding_machine, 0.00, 0.00, 0.97, 0.97]
+  img_edge_banding_machine_ddgs_00011_jpg.rf.1b41137d0dc9890821438877461cb3fe:  # #3
+    - [edge_banding_machine, 0.00, 0.00, 0.98, 0.51]
+    - [edge_banding_machine, 0.00, 0.00, 0.99, 0.87]
+  img_edge_banding_machine_ddgs_00034_jpg.rf.178e53ec3a7845edb25ebe88cd89fca8:  # #4
+    - [edge_banding_machine, 0.00, 0.01, 1.00, 0.99]
+    - [edge_banding_machine, 0.01, 0.01, 1.00, 0.99]
+  img_edge_banding_machine_ddgs_00031_jpg.rf.7ff8e9d0329aec75c002ff1271a0dcff:  # #5
+    - [edge_banding_machine, 0.01, 0.00, 1.00, 0.99]
+  img_edge_banding_machine_ddgs_00039_jpg.rf.0e4b8f98427e7d9ed586e4732d20e9e9:  # #6
+    - [edge_banding_machine, 0.01, 0.00, 0.98, 0.85]
+  img_edge_banding_machine_ddgs_00048_jpg.rf.97e980111aa04283458b3e454722d070:  # #7
+    - [edge_banding_machine, 0.00, 0.00, 1.00, 0.93]
+  img_edge_banding_machine_ddgs_00056_jpg.rf.50ef2b075536a87f7a27bf5a18399c14:  # #8
+    - [edge_banding_machine, 0.01, 0.20, 0.97, 0.69]
+  img_edge_banding_machine_ddgs_00063_jpg.rf.39a20af89de470034b365e4db72681a2:  # #9
+    - [edge_banding_machine, 0.00, 0.00, 1.00, 0.95]
+  img_edge_banding_machine_ddgs_00069_jpg.rf.3799f219398ab682895b8de5fae57c13:  # #10
+    - [edge_banding_machine, 0.81, 0.72, 0.94, 0.92]
+    - [edge_banding_machine, 0.00, 0.00, 0.98, 1.00]
+    - [edge_banding_machine, 0.00, 0.00, 0.99, 1.00]
+  img_edge_banding_machine_ddgs_00083_jpg.rf.d7fe141230754e6e6654b4274e31de67:  # #11
+    - [edge_banding_machine, 0.00, 0.00, 1.00, 0.99]
+    - [edge_banding_machine, 0.00, 0.01, 1.00, 0.97]
+    - [edge_banding_machine, 0.00, 0.00, 1.00, 0.96]
+  img_edge_banding_machine_ddgs_00118_jpg.rf.7890cd3402b65b2831e7e3b884950b3a:  # #12
+    - [edge_banding_machine, 0.01, 0.01, 1.00, 1.00]
+  img_edge_banding_machine_ddgs_00134_jpg.rf.f6240b6c0ffa0132dd3542ce471588d4:  # #13
+    - [edge_banding_machine, 0.01, 0.19, 1.00, 0.85]
+    - [edge_banding_machine, 0.01, 0.01, 0.99, 0.92]
+    - [edge_banding_machine, 0.00, 0.01, 1.00, 0.92]
+  img_edge_banding_machine_ddgs_00136_jpg.rf.ab97e23f4881bb183984d47df0e52f34:  # #14
+    - [edge_banding_machine, 0.00, 0.00, 1.00, 0.94]
+    - [edge_banding_machine, 0.00, 0.00, 1.00, 0.95]
+  img_edge_banding_machine_ddgs_00141_jpg.rf.eb3c83dea7072a72f704cfb92272a427:  # #15
+    - [edge_banding_machine, 0.00, 0.01, 0.99, 0.99]
+  img_edge_banding_machine_ddgs_00170_jpg.rf.1c586e2c7ab6771debe14f4d7565a55d:  # #16
+    - [edge_banding_machine, 0.00, 0.00, 0.99, 0.97]
+    - [edge_banding_machine, 0.00, 0.00, 0.99, 0.97]
+  img_edge_banding_machine_ddgs_00172_jpg.rf.0032c10cbace86ba27de460178c85d44:  # #17
+    - [edge_banding_machine, 0.00, 0.00, 0.98, 0.94]
+  img_edge_banding_machine_ddgs_00181_jpg.rf.2e94aff12a45509fe4dab836d9a4e87c:  # #18
+    - [edge_banding_machine, 0.01, 0.00, 1.00, 0.92]
+  img_edge_banding_machine_ddgs_00187_jpg.rf.ec6369656f46648a326a8a2cdf52f101:  # #19
+    - [edge_banding_machine, 0.00, 0.00, 0.99, 1.00]
+    - [edge_banding_machine, 0.00, 0.07, 0.10, 0.51]
+    - [edge_banding_machine, 0.38, 0.80, 0.53, 1.00]
+  img_edge_banding_machine_ddgs_00188_jpg.rf.16d76dc73f31b6e2dae3918bfb1a38b6:  # #20
+    - [edge_banding_machine, 0.03, 0.00, 1.00, 0.95]
+  img_edge_banding_machine_ddgs_00191_jpg.rf.7c67a50d34f71bb7b1f4fb59cc3a05ce:  # #21
+    - [edge_banding_machine, 0.00, 0.00, 0.99, 0.89]
+  img_edge_banding_machine_ddgs_00197_jpg.rf.58d0335d1cb3577f97b222650dcaf9f6:  # #22
+    - [edge_banding_machine, 0.00, 0.02, 0.99, 0.88]
+    - [edge_banding_machine, 0.00, 0.00, 0.99, 0.91]
+  img_edge_banding_machine_ddgs_00203_jpg.rf.e9c72d6366f57bd650b68bec4e5c2e0c:  # #23
+    - [edge_banding_machine, 0.00, 0.01, 0.98, 0.99]
+  img_edge_banding_machine_ddgs_00209_jpg.rf.ba6692c7d2261952705d75004eb54efe:  # #24
+    - [edge_banding_machine, 0.00, 0.00, 0.99, 1.00]
+  img_edge_banding_machine_ddgs_00216_jpg.rf.9e7e321fff9993b904aa9421f856e31f:  # #25
+    - [edge_banding_machine, 0.02, 0.62, 0.98, 0.99]
+    - [edge_banding_machine, 0.03, 0.45, 0.96, 0.63]
+    - [edge_banding_machine, 0.20, 0.16, 0.42, 0.42]
+  img_edge_banding_machine_ddgs_00218_jpg.rf.a52113c1723d62e1008be75412a12492:  # #26
+    - [edge_banding_machine, 0.01, 0.01, 1.00, 0.96]
+  img_edge_banding_machine_ddgs_00221_jpg.rf.51bbaf834f90f3f3a7509452fd3c4e15:  # #27
+    - [edge_banding_machine, 0.00, 0.01, 0.99, 0.94]
+  img_edge_banding_machine_ddgs_00260_jpg.rf.ba1cc4f5fa049a400ac037050c38ae2c:  # #28
+    - [edge_banding_machine, 0.00, 0.04, 0.98, 0.98]
+    - [edge_banding_machine, 0.00, 0.00, 0.99, 0.95]
+  img_edge_banding_machine_ddgs_00318_jpg.rf.d6161fcbe1558d9dda2e3f0ee9addf68:  # #29
+    - [edge_banding_machine, 0.01, 0.00, 1.00, 0.46]
+    - [edge_banding_machine, 0.01, 0.00, 1.00, 0.98]
+  img_edge_banding_machine_ddgs_00319_jpg.rf.72292acc440deaf9fa4168f8bb33642f:  # #30
+    - [edge_banding_machine, 0.00, 0.00, 0.99, 0.91]
+  img_edge_banding_machine_ddgs_00330_jpg.rf.0951c6f689593eaed8983a4ac3297654:  # #31
+    - [edge_banding_machine, 0.20, 0.58, 0.85, 0.68]
+    - [edge_banding_machine, 0.19, 0.34, 0.86, 0.42]
+  img_edge_banding_machine_ddgs_00359_jpg.rf.d71b21068551868a8c4a891439426320:  # #32
+    - [edge_banding_machine, 0.00, 0.00, 1.00, 0.96]
+  img_edge_banding_machine_ddgs_00432_jpg.rf.6ffa069aeb7f95022c5bd3debb43a7ab:  # #33
+    - [edge_banding_machine, 0.00, 0.00, 1.00, 0.99]
+  img_edge_banding_machine_ddgs_00433_jpg.rf.10d8f9dd4961758fecd93bbc7f030c7a:  # #34
+    - [edge_banding_machine, 0.00, 0.00, 0.99, 0.98]
+    - [edge_banding_machine, 0.00, 0.88, 0.44, 1.00]
+    - [edge_banding_machine, 0.00, 0.00, 0.99, 0.96]
+    - [edge_banding_machine, 0.79, 0.85, 1.00, 1.00]
+  img_edge_banding_machine_ddgs_00441_jpg.rf.fb27da46ac73d073668cf3dc4d169f64:  # #35
+    - [edge_banding_machine, 0.04, 0.37, 0.19, 0.59]
+  img_edge_banding_machine_ddgs_00446_jpg.rf.eab6839e15679763c817b0b8ce330111:  # #36
+    - [edge_banding_machine, 0.01, 0.00, 1.00, 1.00]
+  img_edge_banding_machine_ddgs_00463_jpg.rf.4a0050e193e4249fdee94e1106c0fa11:  # #37
+    - [edge_banding_machine, 0.04, 0.74, 0.85, 0.96]
+  img_edge_banding_machine_ddgs_00465_jpg.rf.3958d3ce44f170179b3e758883a41ff3:  # #38
+    - [edge_banding_machine, 0.01, 0.00, 0.99, 0.91]
+  img_edge_banding_machine_ddgs_00469_jpg.rf.290db6b72f1c90b02c8fd71dc786453f:  # #39
+    - [edge_banding_machine, 0.01, 0.01, 0.99, 0.98]
+  img_edge_banding_machine_ddgs_00473_jpg.rf.6fc19efa6505910753980fae376c1b06:  # #40
+    - [edge_banding_machine, 0.00, 0.00, 0.97, 0.99]
+    - [edge_banding_machine, 0.00, 0.00, 0.99, 0.96]
+  img_edge_banding_machine_ddgs_00484_jpg.rf.2cd86a8f3d200b9515685d98b5655ebd:  # #41
+    - [edge_banding_machine, 0.00, 0.29, 0.98, 0.97]
+    - [edge_banding_machine, 0.01, 0.01, 0.99, 0.97]
+  img_edge_banding_machine_ddgs_00525_jpg.rf.d33cfb729ac4013b6e633f7acd42b806:  # #42
+    - [edge_banding_machine, 0.00, 0.00, 0.96, 0.91]
+    - [edge_banding_machine, 0.03, 0.74, 0.48, 0.92]
+  img_edge_banding_machine_ddgs_00043_jpg.rf.9467cef83147de5ea2db61def5337c47:  # #43
+    - [edge_banding_machine, 0.01, 0.00, 1.00, 0.99]
+  img_edge_banding_machine_ddgs_00071_jpg.rf.6e48075959128ade907bd5c263738db2:  # #44
+    - [edge_banding_machine, 0.00, 0.00, 0.98, 0.72]
+  img_edge_banding_machine_ddgs_00078_jpg.rf.124f3b0915af536695eb146ce1c8fd85:  # #45
+    - [edge_banding_machine, 0.00, 0.00, 0.98, 1.00]
+    - [edge_banding_machine, 0.00, 0.00, 0.99, 0.99]
+  img_edge_banding_machine_ddgs_00079_jpg.rf.2038ef642122c3ef3dd7d8fc39218da2:  # #46
+    - [edge_banding_machine, 0.23, 0.60, 0.85, 0.77]
+    - [edge_banding_machine, 0.33, 0.18, 0.81, 0.37]
+  img_edge_banding_machine_ddgs_00002_jpg.rf.d04afcbe2b1bd4166e062596eb9f1db3:  # #47
+    - [edge_banding_machine, 0.00, 0.00, 0.97, 0.93]
+  img_edge_banding_machine_ddgs_00013_jpg.rf.f78801439beecd8038407447c233e6c2:  # #48
+    - [edge_banding_machine, 0.03, 0.22, 0.99, 0.45]
+  img_edge_banding_machine_ddgs_00017_jpg.rf.b5c5c4cf45af4e224233cb4f72955598:  # #49
+    - [edge_banding_machine, 0.01, 0.00, 0.98, 0.90]
+  img_edge_banding_machine_ddgs_00046_jpg.rf.e1bb2243325f230283a8c82c47585ae0:  # #50
+    - [edge_banding_machine, 0.01, 0.00, 0.98, 0.91]
+  img_edge_banding_machine_ddgs_00049_jpg.rf.ac4338860940da37ec49d0f52e8f1a39:  # #51
+    - [edge_banding_machine, 0.00, 0.00, 1.00, 0.97]
+    - [edge_banding_machine, 0.05, 0.03, 0.98, 1.00]
+  img_edge_banding_machine_ddgs_00054_jpg.rf.7b31bdbd15b8ce9e0e8a1cb0595a0daf:  # #52
+    - [edge_banding_machine, 0.01, 0.00, 0.99, 0.96]
+    - [edge_banding_machine, 0.00, 0.00, 0.99, 0.94]
+  img_edge_banding_machine_ddgs_00057_jpg.rf.64c9ca0917561b9a247cd6e68745be70:  # #53
+    - [edge_banding_machine, 0.00, 0.00, 0.99, 0.97]
+    - [edge_banding_machine, 0.01, 0.26, 1.00, 0.73]
+  img_edge_banding_machine_ddgs_00059_jpg.rf.496c6d22280b846982ae919fe4bb7624:  # #54
+    - [edge_banding_machine, 0.00, 0.00, 0.99, 0.95]
+  img_edge_banding_machine_ddgs_00092_jpg.rf.51ae4607abd3828fad8444eae0123afb:  # #55
+    - [edge_banding_machine, 0.00, 0.00, 0.51, 0.89]
+    - [edge_banding_machine, 0.61, 0.00, 1.00, 0.56]
+    - [edge_banding_machine, 0.75, 0.71, 1.00, 0.93]
+  img_edge_banding_machine_ddgs_00107_jpg.rf.9681fdcdfc183740471a74ff57569866:  # #56
+    - [edge_banding_machine, 0.02, 0.01, 0.97, 1.00]
+  img_edge_banding_machine_ddgs_00120_jpg.rf.a408e45b3f0008ecd4f3affe1a72bbfe:  # #57
+    - [edge_banding_machine, 0.00, 0.00, 0.98, 0.83]
+  img_edge_banding_machine_ddgs_00127_jpg.rf.0d03695735389f4ba169d969351e4405:  # #58
+    - [edge_banding_machine, 0.01, 0.00, 0.99, 0.99]
+  img_edge_banding_machine_ddgs_00133_jpg.rf.f261d5bc8fce88717e8e63a9b8154522:  # #59
+    - [edge_banding_machine, 0.01, 0.31, 0.98, 0.65]
+  img_edge_banding_machine_ddgs_00160_jpg.rf.0ef50cc88198fd9912829ac7fc6f41aa:  # #60
+    - [edge_banding_machine, 0.00, 0.00, 1.00, 0.96]
+  img_edge_banding_machine_ddgs_00457_jpg.rf.2bcb289f6b840894bc8f044f8bb62d41:  # #61
+    - [edge_banding_machine, 0.24, 0.45, 1.00, 1.00]
+    - [edge_banding_machine, 0.03, 0.00, 0.72, 0.58]
+    - [edge_banding_machine, 0.00, 0.56, 0.25, 0.94]
+  img_edge_banding_machine_ddgs_00074_jpg.rf.2930eb7d657fa49175fa6f63855fbf4c:  # #62
+    - [edge_banding_machine, 0.00, 0.00, 0.99, 1.00]
+  img_miter_saw_00033_661759d6f3_jpg.rf.fadfffd81a85fbaec52456f62b13c3d6:  # #63
+    - [miter_saw, 0.01, 0.00, 0.99, 0.99]
+  img_miter_saw_ddgs_00244_jpg.rf.709303e1200bf83f19e8b0f8fc45c77d:  # #64
+    - [miter_saw, 0.48, 0.01, 1.00, 0.94]
+    - [miter_saw, 0.49, 0.00, 1.00, 0.92]
+    - [miter_saw, 0.00, 0.00, 0.97, 1.00]
+  img_miter_saw_ddgs_00254_jpg.rf.1a3d83c28a268d180821e65137686460:  # #65
+    - [miter_saw, 0.08, 0.52, 0.47, 0.95]
+  img_miter_saw_ddgs_00305_jpg.rf.4e3b13a8c5e1d35d1b1a7af10daf1bd3:  # #66
+    - [miter_saw, 0.01, 0.00, 0.99, 1.00]
+  img_miter_saw_ddgs_00355_jpg.rf.5256566fc092b9fa231de8c758354007:  # #67
+    - [miter_saw, 0.12, 0.00, 1.00, 0.16]
+  img_miter_saw_ddgs_00371_jpg.rf.ed40c1400d7599476225bea800b6bce5:  # #68
+    - [miter_saw, 0.42, 0.01, 1.00, 0.64]
+  img_miter_saw_00048_77ee4e5417_jpg.rf.8ac2db29c8508ba6737b4475651c3172:  # #69
+    - [miter_saw, 0.00, 0.04, 1.00, 1.00]
+    - [miter_saw, 0.57, 0.00, 1.00, 0.65]
+  img_miter_saw_ddgs_00317_jpg.rf.8da5d94a3d1bf6d01e8afa817914ce74:  # #70
+    - [miter_saw, 0.00, 0.32, 1.00, 1.00]
+  img_band_saw_00000_8c43e6e92d_jpg.rf.0938ed2a62d9d8456e7dc98c5fd8c036:  # #71
+    - [band_saw, 0.57, 0.00, 0.99, 0.97]
+  img_band_saw_00009_09ae09a0f4_jpg.rf.bbee616dbf5c41fdc9f43df8ff37e6ae:  # #72
+    - [band_saw, 0.49, 0.00, 1.00, 0.56]
+    - [band_saw, 0.60, 0.00, 1.00, 1.00]
+  img_band_saw_00057_d38b515c37_jpg.rf.344ec3862c3c85b32c5d12c3ca568ddb:  # #73
+    - [band_saw, 0.10, 0.25, 0.94, 0.83]
+  img_band_saw_00163_f3b096b049_jpg.rf.e449b99664ee5d99a9d5c506946f6a93:  # #74
+    - [band_saw, 0.33, 0.00, 1.00, 0.81]
+  img_band_saw_00358_5a2ebd4253_jpg.rf.8fae43e0362e3d80444466f23d4902c8:  # #75
+    - [band_saw, 0.05, 0.02, 0.97, 1.00]
+  img_band_saw_00353_dcd9abbde9_jpg.rf.d9808b4008e1ff27dd6d1827150fd407:  # #76
+    - [band_saw, 0.00, 0.00, 0.48, 0.68]
+  img_band_saw_ddgs_00455_jpg.rf.b535f5d65df9bf3bbc986415b6ed50c4:  # #77
+    - [band_saw, 0.45, 0.00, 1.00, 0.43]
+    - [band_saw, 0.00, 0.01, 0.99, 0.99]
+  img_band_saw_ddgs_00511_jpg.rf.9ae3baaa2d465902df0b9bdb8cd7d336:  # #78
+    - [band_saw, 0.00, 0.03, 1.00, 0.98]
+  img_band_saw_ddgs_00485_jpg.rf.26e5b7950a8deaefdcc12493a60b3ad6:  # #79
+    - [band_saw, 0.00, 0.02, 0.98, 0.98]
+  img_band_saw_ddgs_00457_jpg.rf.8ef01cf1e00fd81f4fbaa3402fa9d567:  # #80
+    - [band_saw, 0.01, 0.03, 0.96, 0.99]
+  img_band_saw_00208_0313577fe6_jpg.rf.c4f43ea05187b4e4280ae008457f09b0:  # #81
+    - [band_saw, 0.56, 0.02, 0.98, 0.48]
+    - [band_saw, 0.49, 0.01, 0.98, 0.99]
+  img_band_saw_00274_255b93a2cd_jpg.rf.841271d073fd1c6f682a0cbc20f5e53f:  # #82
+    - [band_saw, 0.01, 0.00, 0.99, 0.99]
+  img_jointer_00086_6ba223f38b_jpg.rf.caaaa7cc417bb83a7058020dde3c1686:  # #83
+    - [jointer, 0.00, 0.52, 0.63, 1.00]
+  img_jointer_ddgs_00225_jpg.rf.be040f34ac6907f9e48de97a7c2627b6:  # #84
+    - [jointer, 0.00, 0.14, 0.99, 1.00]
+  img_jointer_ddgs_00245_jpg.rf.f0b16b410a5ef8f3e7f68606232952ed:  # #85
+    - [jointer, 0.00, 0.29, 0.52, 1.00]
+    - [jointer, 0.58, 0.46, 1.00, 1.00]
+    - [jointer, 0.00, 0.30, 0.52, 1.00]
+    - [jointer, 0.47, 0.00, 1.00, 0.36]
+  img_jointer_ddgs_00248_jpg.rf.5c2536f10d00d055a8a399149ed2b9fc:  # #86
+    - [jointer, 0.52, 0.36, 1.00, 1.00]
+    - [jointer, 0.00, 0.26, 0.44, 1.00]
+    - [jointer, 0.00, 0.31, 0.48, 1.00]
+  img_jointer_ddgs_00256_jpg.rf.d97424446a650927fc5ad01ccec6bf69:  # #87
+    - [jointer, 0.00, 0.28, 0.53, 0.99]
+  img_jointer_ddgs_00334_jpg.rf.afb9c8304f30dd4f8c138e535e67bbd4:  # #88
+    - [jointer, 0.00, 0.41, 0.51, 1.00]
+    - [jointer, 0.56, 0.25, 1.00, 1.00]
+  img_jointer_00105_8674320754_jpg.rf.fe02ea50689b8fca43155465f19226d7:  # #89
+    - [jointer, 0.53, 0.10, 0.97, 0.40]
+    - [jointer, 0.01, 0.07, 0.46, 0.39]
+  img_jointer_00112_5d38518ac1_jpg.rf.0a544f84f98bb855ad2ff73157c81739:  # #90
+    - [jointer, 0.13, 0.28, 0.53, 0.78]
+  img_jointer_ddgs_00193_jpg.rf.861edf39d9de32744aceb84fe08c81b7:  # #91
+    - [jointer, 0.01, 0.01, 1.00, 0.97]
+  img_planer_00000_689eb90f78_jpg.rf.e0a45b2ff96190e9793023636671c893:  # #92
+    - [planer, 0.00, 0.00, 0.50, 0.88]
+    - [planer, 0.00, 0.00, 0.47, 0.88]
+  img_planer_00001_06ba9e380f_jpg.rf.54bd348d504c0ec70c6a3cb6c31d0120:  # #93
+    - [planer, 0.00, 0.00, 0.73, 0.85]
+    - [planer, 0.62, 0.00, 1.00, 0.58]
+    - [planer, 0.00, 0.00, 0.71, 0.84]
+  img_planer_00023_bed908031d_jpg.rf.8a5a9cd1a58c5f27ac2b7e913e1d6e9b:  # #94
+    - [planer, 0.00, 0.00, 0.42, 0.84]
+    - [planer, 0.51, 0.00, 1.00, 0.42]
+  img_planer_00070_0950a75732_jpg.rf.7d0a0ae473585874fb646f1b8dace1fd:  # #95
+    - [planer, 0.02, 0.00, 1.00, 0.96]
+  img_planer_ddgs_00160_jpg.rf.bfa6ea5a6647b42b266c0e67605dc0c6:  # #96
+    - [planer, 0.53, 0.05, 0.95, 0.63]
+  img_planer_ddgs_00289_jpg.rf.4e8a77d8a2ad880bbfbcf400fed57b4a:  # #97
+    - [planer, 0.00, 0.00, 0.73, 0.82]
+    - [planer, 0.37, 0.01, 1.00, 0.96]
+    - [planer, 0.00, 0.00, 0.73, 0.91]
+    - [planer, 0.92, 0.00, 1.00, 0.23]
+    - [planer, 0.74, 0.27, 1.00, 1.00]
+  img_planer_00101_27d9dec45b_jpg.rf.c6bf64f3ba4cb6a8b1633639244afd7f:  # #98
+    - [planer, 0.00, 0.02, 0.97, 0.82]
+  img_planer_00048_b8ab569069_jpg.rf.eee5741341e32c4f84f08efb93726d71:  # #99
+    - [planer, 0.26, 0.14, 0.96, 0.96]
+  img_planer_ddgs_00205_jpg.rf.005ff1c99d40a7669e879c2301b02602:  # #100
+    - [planer, 0.00, 0.26, 0.40, 0.73]
+  img_table_saw_00139_022b974180_jpg.rf.c0e4101617146f9063be46346e98c3a9:  # #101
+    - [table_saw, 0.06, 0.03, 1.00, 0.98]
+  img_table_saw_00144_c885e961cb_jpg.rf.563c3e42e254d8e64a23668472a73c07:  # #102
+    - [table_saw, 0.00, 0.57, 0.99, 1.00]
+  img_table_saw_00234_34dec3c713_jpg.rf.049eb8a1c6c53f906780b7f3b28e6bab:  # #103
+    - [table_saw, 0.13, 0.18, 0.78, 0.41]
+  img_table_saw_00237_39dd1b573f_jpg.rf.204c4c1f7c67763149ede7264397fee3:  # #104
+    - [table_saw, 0.46, 0.22, 0.91, 0.44]
+  img_table_saw_00251_8601c0b5eb_jpg.rf.39db75b211ad14eb8f00d0d6f5670c53:  # #105
+    - [table_saw, 0.31, 0.00, 0.91, 0.19]
+    - [table_saw, 0.30, 0.00, 1.00, 0.20]
+  img_table_saw_00328_f78e6ab173_jpg.rf.11b362953521bfa0e96805adc7c3c888:  # #106
+    - [table_saw, 0.04, 0.34, 0.35, 0.93]
+  img_table_saw_00373_464eb63114_jpg.rf.573f9f9da9605f986db82eec316c3021:  # #107
+    - [table_saw, 0.07, 0.34, 0.44, 0.76]
+    - [table_saw, 0.07, 0.34, 0.44, 0.76]
+  img_table_saw_ddgs_00314_jpg.rf.cb0be10df9a9c106499ad1c133f1d18d:  # #108
+    - [table_saw, 0.00, 0.04, 0.91, 0.26]
+  img_table_saw_ddgs_00418_jpg.rf.f43c09071f7b0bfd0e9db814a1610199:  # #109
+    - [table_saw, 0.00, 0.00, 0.60, 1.00]
+  img_table_saw_00340_028fd03754_jpg.rf.e75a64e6afd776ebbd450916476b069a:  # #110
+    - [table_saw, 0.11, 0.44, 0.40, 0.57]
+  img_table_saw_00016_91228a230d_jpg.rf.fdb7cec557f94cb06888fec5daf910b8:  # #111
+    - [table_saw, 0.00, 0.00, 0.99, 0.96]
+  img_table_saw_00209_fc097e8291_jpg.rf.cb995e18fff77ff03ba23b47d00c61b8:  # #112
+    - [table_saw, 0.00, 0.72, 0.41, 0.88]

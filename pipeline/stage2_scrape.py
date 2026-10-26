@@ -47,7 +47,9 @@ from tqdm import tqdm
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from pipeline.config import (
     ALL_CLASS_NAMES,
+    CCTV_QUERY_TEMPLATES,
     CLASSES,
+    HIGHANGLE_QUERY_TEMPLATES,
     DATASET_TRAIN_DIR,
     DDGS_MAX_RETRIES,
     DDGS_SLEEP_BETWEEN_QUERIES,
@@ -84,29 +86,49 @@ EXCLUDE_KEYWORDS = {
     "logo", "icon", "drawing", "sketch", "blueprint", "rendering", "3d model"
 }
 
+# CCTV templates want CCTV/surveillance-titled scenes, so those words are allowed there;
+# camera *product* listings are excluded instead.
+EXCLUDE_KEYWORDS_CCTV = (EXCLUDE_KEYWORDS - {"cctv", "surveillance"}) | {
+    "dome camera", "bullet camera", "ip camera", "ptz camera", "camera kit", "nvr", "dvr",
+    "cctv camera", "surveillance camera", "camera system", "cameras for", "camera for",
+}
 
-def _is_relevant_result(result: dict) -> bool:
+TEMPLATE_SETS = {"default": QUERY_TEMPLATES, "cctv": CCTV_QUERY_TEMPLATES, "highangle": HIGHANGLE_QUERY_TEMPLATES}
+# highangle keeps the default exclusions (cctv/surveillance titles are camera products) plus product-listing words
+EXCLUDE_SETS = {"default": EXCLUDE_KEYWORDS, "cctv": EXCLUDE_KEYWORDS_CCTV,
+                "highangle": EXCLUDE_KEYWORDS | {"camera", "infographic", "brochure", "spare parts"}}
+
+_SEEN_URLS: set[str] = set()  # URL de-duplication across templates AND classes within one run
+
+
+def _is_relevant_result(result: dict, exclude: set[str] = EXCLUDE_KEYWORDS) -> bool:
     """Filter out non-machine / off-target results based on title and URL."""
     title = (result.get("title") or "").lower()
     image_url = (result.get("image") or "").lower()
-    
-    if any(kw in title for kw in EXCLUDE_KEYWORDS):
+
+    if any(kw in title for kw in exclude):
         return False
-    if any(kw in image_url for kw in EXCLUDE_KEYWORDS):
+    if any(kw in image_url for kw in exclude):
         return False
     return True
 
 
-def _url_to_filename(url: str, class_name: str, idx: int) -> str:
-    """Derive a stable, filesystem-safe filename from a URL."""
+def _url_to_filename(url: str, class_name: str, idx: int, tag: str = "") -> str:
+    """Derive a stable, filesystem-safe filename from a URL (tag marks the scrape batch, e.g. 'cctv')."""
     digest = hashlib.md5(url.encode()).hexdigest()[:10]
-    return f"img_{class_name}_{idx:05d}_{digest}.jpg"
+    prefix = f"img_{class_name}_{tag}" if tag else f"img_{class_name}"
+    return f"{prefix}_{idx:05d}_{digest}.jpg"
 
 
-def _existing_count(class_dir: Path) -> int:
-    """Count already-downloaded images for a class."""
+def _existing_count(class_dir: Path, class_name: str = "", tag: str = "") -> int:
+    """Count already-downloaded images for a class (only this tag's batch when a tag is given)."""
     exts = {".jpg", ".jpeg", ".png", ".webp"}
-    return sum(1 for p in class_dir.iterdir() if p.suffix.lower() in exts) if class_dir.exists() else 0
+    if not class_dir.exists():
+        return 0
+    files = (p for p in class_dir.iterdir() if p.suffix.lower() in exts)
+    if tag:
+        files = (p for p in files if p.name.startswith(f"img_{class_name}_{tag}_"))
+    return sum(1 for _ in files)
 
 
 def _download_image(url: str, dest: Path, timeout: int = DOWNLOAD_TIMEOUT) -> bool:
@@ -176,9 +198,12 @@ def scrape_class(
     cls: dict,
     resume: bool = False,
     cap: int = SCRAPE_CAP_PER_CLASS,
+    templates: list[str] = QUERY_TEMPLATES,
+    exclude: set[str] = EXCLUDE_KEYWORDS,
+    tag: str = "",
 ) -> dict:
     """
-    Scrape images for one class across all 5 query templates.
+    Scrape images for one class across the given query templates.
 
     Returns a summary dict with per-template counts and total.
     """
@@ -187,7 +212,7 @@ def scrape_class(
     class_dir = DATASET_TRAIN_DIR / name
     class_dir.mkdir(parents=True, exist_ok=True)
 
-    already = _existing_count(class_dir)
+    already = _existing_count(class_dir, name, tag)
     if resume and already >= cap:
         print(f"  [{name}] already at cap ({already}), skipping.")
         return {
@@ -200,8 +225,8 @@ def scrape_class(
 
     remaining_cap = cap - already
     # Distribute cap evenly across templates; remainder goes to first template
-    per_template_base = remaining_cap // len(QUERY_TEMPLATES)
-    per_template_extra = remaining_cap % len(QUERY_TEMPLATES)
+    per_template_base = remaining_cap // len(templates)
+    per_template_extra = remaining_cap % len(templates)
 
     template_counts: dict[str, dict] = {}
     total_downloaded = 0
@@ -211,9 +236,9 @@ def scrape_class(
     # some URLs will fail to download.  Ask for 1.5x and discard excess.
     fetch_multiplier = 1.5
 
-    print(f"\n  [{name}] target={SCRAPE_CAP_PER_CLASS} | existing={already} | need={remaining_cap}")
+    print(f"\n  [{name}] target={cap} | existing={already} | need={remaining_cap}")
 
-    for t_idx, template in enumerate(QUERY_TEMPLATES):
+    for t_idx, template in enumerate(templates):
         quota = per_template_base + (1 if t_idx < per_template_extra else 0)
         if total_downloaded >= remaining_cap or quota == 0:
             template_counts[template] = {"fetched": 0, "downloaded": 0, "quota": quota}
@@ -222,7 +247,7 @@ def scrape_class(
         query = template.format(machine=display)
         fetch_count = min(max(int(quota * 3), 60), 100)  # DDGS cap awareness
 
-        print(f"    template {t_idx + 1}/{len(QUERY_TEMPLATES)}: {query!r} | target={remaining_cap}, fetching up to {fetch_count}")
+        print(f"    template {t_idx + 1}/{len(templates)}: {query!r} | target={remaining_cap}, fetching up to {fetch_count}")
 
         results = _search_with_retry(query, max_results=fetch_count)
         time.sleep(DDGS_SLEEP_BETWEEN_QUERIES)
@@ -230,9 +255,11 @@ def scrape_class(
         downloaded_this_template = 0
 
         for result in results:
-            if total_downloaded >= remaining_cap:
+            # Bug fix 2026-10-21: enforce the per-template quota, or the first query fills the whole class cap
+            # (e.g. 35 of 40) and the other templates add no diversity.
+            if total_downloaded >= remaining_cap or downloaded_this_template >= quota:
                 break
-            if not _is_relevant_result(result):
+            if not _is_relevant_result(result, exclude):
                 continue
 
             # Try primary image URL, fall back to thumbnail
@@ -240,8 +267,14 @@ def scrape_class(
                 url = result.get(url_key, "")
                 if not url:
                     continue
+                # Bug fix 2026-10-21: the old exists() check never matched because the running index is part
+                # of the filename, so the same URL was saved again by every query/class that returned it
+                # (537 repeats in the cctv batch). De-duplicate on the URL itself.
+                if url in _SEEN_URLS:
+                    break  # this result was already handled; don't fall back to its thumbnail either
+                _SEEN_URLS.add(url)
 
-                dest_filename = _url_to_filename(url, name, global_idx)
+                dest_filename = _url_to_filename(url, name, global_idx, tag)
                 dest_path = class_dir / dest_filename
 
                 if dest_path.exists():
@@ -262,7 +295,7 @@ def scrape_class(
         }
         print(f"      -> fetched {len(results)}, downloaded {downloaded_this_template}/{quota}")
 
-    final_count = _existing_count(class_dir)
+    final_count = _existing_count(class_dir, name, tag)
     return {
         "class": name,
         "skipped_resume": False,
@@ -303,7 +336,24 @@ def main() -> None:
         default=SCRAPE_CAP_PER_CLASS,
         help=f"Maximum total raw images per class (default: {SCRAPE_CAP_PER_CLASS}).",
     )
+    parser.add_argument(
+        "--templates",
+        choices=sorted(TEMPLATE_SETS),
+        default="default",
+        help="Query template set: 'default' (catalog-style) or 'cctv' (elevated / factory-floor views).",
+    )
+    parser.add_argument(
+        "--tag",
+        default=None,
+        help="Filename tag for this batch (img_<class>_<tag>_*.jpg); the cap then counts only tagged files. "
+             "Defaults to 'cctv' with --templates cctv, else none.",
+    )
     args = parser.parse_args()
+    templates = TEMPLATE_SETS[args.templates]
+    exclude = EXCLUDE_SETS[args.templates]
+    tag = args.tag if args.tag is not None else (args.templates if args.templates != "default" else "")
+    # Images from earlier runs can't be URL-seeded (filenames hold only an md5 prefix); stage2c_accept_gate.py
+    # removes those duplicates by perceptual hash.
 
     # Validate provided class slugs
     invalid = [c for c in args.classes if c not in ALL_CLASS_NAMES]
@@ -317,21 +367,24 @@ def main() -> None:
     print("STAGE 2 -- DuckDuckGo Image Scraper")
     print(f"Classes    : {len(target_classes)}")
     print(f"Cap/class  : {args.cap}")
-    print(f"Templates  : {len(QUERY_TEMPLATES)}")
+    print(f"Templates  : {args.templates} ({len(templates)})")
+    print(f"Tag        : {tag or '(none)'}")
     print(f"Resume mode: {args.resume}")
     print("=" * 65)
 
     results = []
     for cls in tqdm(target_classes, desc="Classes", unit="class", position=0, leave=True):
-        result = scrape_class(cls, resume=args.resume, cap=args.cap)
+        result = scrape_class(cls, resume=args.resume, cap=args.cap, templates=templates, exclude=exclude, tag=tag)
         results.append(result)
 
     # Save log
     LOGS_DIR.mkdir(parents=True, exist_ok=True)
-    log_path = LOGS_DIR / "stage2_scrape_log.json"
+    log_path = LOGS_DIR / (f"stage2_scrape_log_{tag}.json" if tag else "stage2_scrape_log.json")
     log_data = {
         "timestamp": datetime.now(timezone.utc).isoformat(),
         "cap_per_class": args.cap,
+        "template_set": args.templates,
+        "tag": tag,
         "results": results,
     }
     with log_path.open("w", encoding="utf-8") as f:

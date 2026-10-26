@@ -1,0 +1,15 @@
+train: train_oversampled_9class.txt
+val: valid_9class.txt
+test: test_9class.txt
+
+nc: 9
+names:
+  0: panel_saw
+  1: hydraulic_press
+  2: table_saw
+  3: planer
+  4: jointer
+  5: band_saw
+  6: miter_saw
+  7: edge_banding_machine
+  8: fire_extinguisher

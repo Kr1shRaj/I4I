@@ -371,3 +371,39 @@ QUERY_TEMPLATES: list[str] = [
     "modern {machine} workshop",
 ]
 
+# Viewpoint-diversity templates: elevated / CCTV / factory-floor context instead of catalog shots.
+# Selected with `stage2_scrape --templates cctv`. Kept separate from QUERY_TEMPLATES because the
+# per-class cap is split evenly across the active templates.
+CCTV_QUERY_TEMPLATES: list[str] = [
+    "{machine} factory surveillance camera",
+    "{machine} workshop CCTV view",
+    "{machine} industrial factory floor high angle",
+    "{machine} overhead camera workshop setup",
+    "{machine} operating in manufacturing plant",
+    "security camera {machine} factory",
+    "{machine} wide angle factory view",
+    "{machine} in busy woodworking shop wide shot",
+    "{machine} workshop interior from above",
+    "{machine} factory floor photo with workers",
+]
+
+# Place-based high-angle templates (2026-10-21). The CCTV templates above pulled camera-hardware ads
+# ("surveillance camera") and eye-level catalog shots (docs/cctv_scrape_postmortem.md); these describe
+# places and vantage points instead of cameras. Selected with `stage2_scrape --templates highangle`.
+HIGHANGLE_QUERY_TEMPLATES: list[str] = [
+    "{machine} furniture factory production line",
+    "{machine} woodworking factory mezzanine view",
+    "{machine} factory floor aerial view",
+    "{machine} workshop overview photo",
+    "{machine} cabinet making shop interior",
+    "{machine} panel processing plant",
+    "{machine} joinery workshop wide view",
+    "{machine} factory tour",
+]
+
+# The 9 classes of the current YOLO-seg model (datasets/9class/data_9class.yaml).
+TARGET_9_CLASS_NAMES: list[str] = [
+    "panel_saw", "hydraulic_press", "table_saw", "planer", "jointer",
+    "band_saw", "miter_saw", "edge_banding_machine", "fire_extinguisher",
+]
+

@@ -1,0 +1,794 @@
+[
+ {
+  "idx": 0,
+  "query_class": "band_saw",
+  "path": "pipeline\\dataset\\train\\band_saw\\img_band_saw_highangle_00001_682d88288c.jpg",
+  "stem": "img_band_saw_highangle_00001_682d88288c",
+  "w": 1056,
+  "h": 1000
+ },
+ {
+  "idx": 1,
+  "query_class": "band_saw",
+  "path": "pipeline\\dataset\\train\\band_saw\\img_band_saw_highangle_00007_bce1d54292.jpg",
+  "stem": "img_band_saw_highangle_00007_bce1d54292",
+  "w": 1500,
+  "h": 1000
+ },
+ {
+  "idx": 2,
+  "query_class": "band_saw",
+  "path": "pipeline\\dataset\\train\\band_saw\\img_band_saw_highangle_00011_defc040fa4.jpg",
+  "stem": "img_band_saw_highangle_00011_defc040fa4",
+  "w": 1024,
+  "h": 1024
+ },
+ {
+  "idx": 3,
+  "query_class": "band_saw",
+  "path": "pipeline\\dataset\\train\\band_saw\\img_band_saw_highangle_00013_f6aea122c6.jpg",
+  "stem": "img_band_saw_highangle_00013_f6aea122c6",
+  "w": 2996,
+  "h": 2996
+ },
+ {
+  "idx": 4,
+  "query_class": "band_saw",
+  "path": "pipeline\\dataset\\train\\band_saw\\img_band_saw_highangle_00014_706b7245a3.jpg",
+  "stem": "img_band_saw_highangle_00014_706b7245a3",
+  "w": 2560,
+  "h": 1708
+ },
+ {
+  "idx": 5,
+  "query_class": "band_saw",
+  "path": "pipeline\\dataset\\train\\band_saw\\img_band_saw_highangle_00023_4892e31fc3.jpg",
+  "stem": "img_band_saw_highangle_00023_4892e31fc3",
+  "w": 1536,
+  "h": 2048
+ },
+ {
+  "idx": 6,
+  "query_class": "band_saw",
+  "path": "pipeline\\dataset\\train\\band_saw\\img_band_saw_highangle_00028_e9ec8add06.jpg",
+  "stem": "img_band_saw_highangle_00028_e9ec8add06",
+  "w": 1200,
+  "h": 891
+ },
+ {
+  "idx": 7,
+  "query_class": "band_saw",
+  "path": "pipeline\\dataset\\train\\band_saw\\img_band_saw_highangle_00030_27afbf72b2.jpg",
+  "stem": "img_band_saw_highangle_00030_27afbf72b2",
+  "w": 474,
+  "h": 713
+ },
+ {
+  "idx": 8,
+  "query_class": "band_saw",
+  "path": "pipeline\\dataset\\train\\band_saw\\img_band_saw_highangle_00034_48f73973dc.jpg",
+  "stem": "img_band_saw_highangle_00034_48f73973dc",
+  "w": 1536,
+  "h": 1024
+ },
+ {
+  "idx": 9,
+  "query_class": "band_saw",
+  "path": "pipeline\\dataset\\train\\band_saw\\img_band_saw_highangle_00035_dea103c309.jpg",
+  "stem": "img_band_saw_highangle_00035_dea103c309",
+  "w": 4096,
+  "h": 3072
+ },
+ {
+  "idx": 10,
+  "query_class": "band_saw",
+  "path": "pipeline\\dataset\\train\\band_saw\\img_band_saw_highangle_00037_735aeaa9ef.jpg",
+  "stem": "img_band_saw_highangle_00037_735aeaa9ef",
+  "w": 474,
+  "h": 355
+ },
+ {
+  "idx": 11,
+  "query_class": "edge_banding_machine",
+  "path": "pipeline\\dataset\\train\\edge_banding_machine\\img_edge_banding_machine_highangle_00000_2f262a5a93.jpg",
+  "stem": "img_edge_banding_machine_highangle_00000_2f262a5a93",
+  "w": 1920,
+  "h": 1079
+ },
+ {
+  "idx": 12,
+  "query_class": "edge_banding_machine",
+  "path": "pipeline\\dataset\\train\\edge_banding_machine\\img_edge_banding_machine_highangle_00004_5a1b5d5d5e.jpg",
+  "stem": "img_edge_banding_machine_highangle_00004_5a1b5d5d5e",
+  "w": 1280,
+  "h": 720
+ },
+ {
+  "idx": 13,
+  "query_class": "edge_banding_machine",
+  "path": "pipeline\\dataset\\train\\edge_banding_machine\\img_edge_banding_machine_highangle_00011_ca27896154.jpg",
+  "stem": "img_edge_banding_machine_highangle_00011_ca27896154",
+  "w": 800,
+  "h": 450
+ },
+ {
+  "idx": 14,
+  "query_class": "edge_banding_machine",
+  "path": "pipeline\\dataset\\train\\edge_banding_machine\\img_edge_banding_machine_highangle_00014_e7b89db236.jpg",
+  "stem": "img_edge_banding_machine_highangle_00014_e7b89db236",
+  "w": 474,
+  "h": 266
+ },
+ {
+  "idx": 15,
+  "query_class": "edge_banding_machine",
+  "path": "pipeline\\dataset\\train\\edge_banding_machine\\img_edge_banding_machine_highangle_00021_5af9a76901.jpg",
+  "stem": "img_edge_banding_machine_highangle_00021_5af9a76901",
+  "w": 474,
+  "h": 312
+ },
+ {
+  "idx": 16,
+  "query_class": "edge_banding_machine",
+  "path": "pipeline\\dataset\\train\\edge_banding_machine\\img_edge_banding_machine_highangle_00032_9ab5a37988.jpg",
+  "stem": "img_edge_banding_machine_highangle_00032_9ab5a37988",
+  "w": 612,
+  "h": 408
+ },
+ {
+  "idx": 17,
+  "query_class": "edge_banding_machine",
+  "path": "pipeline\\dataset\\train\\edge_banding_machine\\img_edge_banding_machine_highangle_00037_b8c563305d.jpg",
+  "stem": "img_edge_banding_machine_highangle_00037_b8c563305d",
+  "w": 800,
+  "h": 533
+ },
+ {
+  "idx": 18,
+  "query_class": "fire_extinguisher",
+  "path": "pipeline\\dataset\\train\\fire_extinguisher\\img_fire_extinguisher_highangle_00001_7f40faae87.jpg",
+  "stem": "img_fire_extinguisher_highangle_00001_7f40faae87",
+  "w": 1060,
+  "h": 596
+ },
+ {
+  "idx": 19,
+  "query_class": "fire_extinguisher",
+  "path": "pipeline\\dataset\\train\\fire_extinguisher\\img_fire_extinguisher_highangle_00009_c1192e1b76.jpg",
+  "stem": "img_fire_extinguisher_highangle_00009_c1192e1b76",
+  "w": 800,
+  "h": 533
+ },
+ {
+  "idx": 20,
+  "query_class": "fire_extinguisher",
+  "path": "pipeline\\dataset\\train\\fire_extinguisher\\img_fire_extinguisher_highangle_00018_db76ce8725.jpg",
+  "stem": "img_fire_extinguisher_highangle_00018_db76ce8725",
+  "w": 728,
+  "h": 408
+ },
+ {
+  "idx": 21,
+  "query_class": "fire_extinguisher",
+  "path": "pipeline\\dataset\\train\\fire_extinguisher\\img_fire_extinguisher_highangle_00020_83ded33bb8.jpg",
+  "stem": "img_fire_extinguisher_highangle_00020_83ded33bb8",
+  "w": 768,
+  "h": 512
+ },
+ {
+  "idx": 22,
+  "query_class": "fire_extinguisher",
+  "path": "pipeline\\dataset\\train\\fire_extinguisher\\img_fire_extinguisher_highangle_00038_bd5ccd5b84.jpg",
+  "stem": "img_fire_extinguisher_highangle_00038_bd5ccd5b84",
+  "w": 405,
+  "h": 720
+ },
+ {
+  "idx": 23,
+  "query_class": "hydraulic_press",
+  "path": "pipeline\\dataset\\train\\hydraulic_press\\img_hydraulic_press_highangle_00001_cb2ff8c2dd.jpg",
+  "stem": "img_hydraulic_press_highangle_00001_cb2ff8c2dd",
+  "w": 500,
+  "h": 500
+ },
+ {
+  "idx": 24,
+  "query_class": "hydraulic_press",
+  "path": "pipeline\\dataset\\train\\hydraulic_press\\img_hydraulic_press_highangle_00002_c6b0203160.jpg",
+  "stem": "img_hydraulic_press_highangle_00002_c6b0203160",
+  "w": 750,
+  "h": 750
+ },
+ {
+  "idx": 25,
+  "query_class": "hydraulic_press",
+  "path": "pipeline\\dataset\\train\\hydraulic_press\\img_hydraulic_press_highangle_00004_f0e3724ec3.jpg",
+  "stem": "img_hydraulic_press_highangle_00004_f0e3724ec3",
+  "w": 2000,
+  "h": 1125
+ },
+ {
+  "idx": 26,
+  "query_class": "hydraulic_press",
+  "path": "pipeline\\dataset\\train\\hydraulic_press\\img_hydraulic_press_highangle_00007_e892789e70.jpg",
+  "stem": "img_hydraulic_press_highangle_00007_e892789e70",
+  "w": 800,
+  "h": 734
+ },
+ {
+  "idx": 27,
+  "query_class": "hydraulic_press",
+  "path": "pipeline\\dataset\\train\\hydraulic_press\\img_hydraulic_press_highangle_00008_5e73475ac9.jpg",
+  "stem": "img_hydraulic_press_highangle_00008_5e73475ac9",
+  "w": 640,
+  "h": 640
+ },
+ {
+  "idx": 28,
+  "query_class": "hydraulic_press",
+  "path": "pipeline\\dataset\\train\\hydraulic_press\\img_hydraulic_press_highangle_00010_6efd91664c.jpg",
+  "stem": "img_hydraulic_press_highangle_00010_6efd91664c",
+  "w": 800,
+  "h": 449
+ },
+ {
+  "idx": 29,
+  "query_class": "hydraulic_press",
+  "path": "pipeline\\dataset\\train\\hydraulic_press\\img_hydraulic_press_highangle_00011_6d424ba08f.jpg",
+  "stem": "img_hydraulic_press_highangle_00011_6d424ba08f",
+  "w": 1380,
+  "h": 773
+ },
+ {
+  "idx": 30,
+  "query_class": "hydraulic_press",
+  "path": "pipeline\\dataset\\train\\hydraulic_press\\img_hydraulic_press_highangle_00012_987930fc28.jpg",
+  "stem": "img_hydraulic_press_highangle_00012_987930fc28",
+  "w": 1000,
+  "h": 560
+ },
+ {
+  "idx": 31,
+  "query_class": "hydraulic_press",
+  "path": "pipeline\\dataset\\train\\hydraulic_press\\img_hydraulic_press_highangle_00020_333b25c5f5.jpg",
+  "stem": "img_hydraulic_press_highangle_00020_333b25c5f5",
+  "w": 1300,
+  "h": 947
+ },
+ {
+  "idx": 32,
+  "query_class": "hydraulic_press",
+  "path": "pipeline\\dataset\\train\\hydraulic_press\\img_hydraulic_press_highangle_00021_d009bfa465.jpg",
+  "stem": "img_hydraulic_press_highangle_00021_d009bfa465",
+  "w": 1300,
+  "h": 944
+ },
+ {
+  "idx": 33,
+  "query_class": "hydraulic_press",
+  "path": "pipeline\\dataset\\train\\hydraulic_press\\img_hydraulic_press_highangle_00026_fabaee7ca9.jpg",
+  "stem": "img_hydraulic_press_highangle_00026_fabaee7ca9",
+  "w": 1576,
+  "h": 1066
+ },
+ {
+  "idx": 34,
+  "query_class": "hydraulic_press",
+  "path": "pipeline\\dataset\\train\\hydraulic_press\\img_hydraulic_press_highangle_00028_d2ec711a87.jpg",
+  "stem": "img_hydraulic_press_highangle_00028_d2ec711a87",
+  "w": 800,
+  "h": 800
+ },
+ {
+  "idx": 35,
+  "query_class": "hydraulic_press",
+  "path": "pipeline\\dataset\\train\\hydraulic_press\\img_hydraulic_press_highangle_00035_b86006c20f.jpg",
+  "stem": "img_hydraulic_press_highangle_00035_b86006c20f",
+  "w": 540,
+  "h": 720
+ },
+ {
+  "idx": 36,
+  "query_class": "jointer",
+  "path": "pipeline\\dataset\\train\\jointer\\img_jointer_highangle_00001_2b2e6f5a2c.jpg",
+  "stem": "img_jointer_highangle_00001_2b2e6f5a2c",
+  "w": 800,
+  "h": 499
+ },
+ {
+  "idx": 37,
+  "query_class": "jointer",
+  "path": "pipeline\\dataset\\train\\jointer\\img_jointer_highangle_00002_3122e80461.jpg",
+  "stem": "img_jointer_highangle_00002_3122e80461",
+  "w": 800,
+  "h": 514
+ },
+ {
+  "idx": 38,
+  "query_class": "jointer",
+  "path": "pipeline\\dataset\\train\\jointer\\img_jointer_highangle_00009_1c7500afa6.jpg",
+  "stem": "img_jointer_highangle_00009_1c7500afa6",
+  "w": 474,
+  "h": 266
+ },
+ {
+  "idx": 39,
+  "query_class": "jointer",
+  "path": "pipeline\\dataset\\train\\jointer\\img_jointer_highangle_00017_2fb6fdf914.jpg",
+  "stem": "img_jointer_highangle_00017_2fb6fdf914",
+  "w": 992,
+  "h": 661
+ },
+ {
+  "idx": 40,
+  "query_class": "jointer",
+  "path": "pipeline\\dataset\\train\\jointer\\img_jointer_highangle_00018_272035b10f.jpg",
+  "stem": "img_jointer_highangle_00018_272035b10f",
+  "w": 800,
+  "h": 533
+ },
+ {
+  "idx": 41,
+  "query_class": "jointer",
+  "path": "pipeline\\dataset\\train\\jointer\\img_jointer_highangle_00021_973dfea339.jpg",
+  "stem": "img_jointer_highangle_00021_973dfea339",
+  "w": 1000,
+  "h": 667
+ },
+ {
+  "idx": 42,
+  "query_class": "jointer",
+  "path": "pipeline\\dataset\\train\\jointer\\img_jointer_highangle_00022_863254840a.jpg",
+  "stem": "img_jointer_highangle_00022_863254840a",
+  "w": 700,
+  "h": 394
+ },
+ {
+  "idx": 43,
+  "query_class": "jointer",
+  "path": "pipeline\\dataset\\train\\jointer\\img_jointer_highangle_00025_9c03549e0d.jpg",
+  "stem": "img_jointer_highangle_00025_9c03549e0d",
+  "w": 1721,
+  "h": 1749
+ },
+ {
+  "idx": 44,
+  "query_class": "jointer",
+  "path": "pipeline\\dataset\\train\\jointer\\img_jointer_highangle_00030_c821a73973.jpg",
+  "stem": "img_jointer_highangle_00030_c821a73973",
+  "w": 740,
+  "h": 493
+ },
+ {
+  "idx": 45,
+  "query_class": "miter_saw",
+  "path": "pipeline\\dataset\\train\\miter_saw\\img_miter_saw_highangle_00004_94ee160e57.jpg",
+  "stem": "img_miter_saw_highangle_00004_94ee160e57",
+  "w": 450,
+  "h": 320
+ },
+ {
+  "idx": 46,
+  "query_class": "miter_saw",
+  "path": "pipeline\\dataset\\train\\miter_saw\\img_miter_saw_highangle_00022_0639689baa.jpg",
+  "stem": "img_miter_saw_highangle_00022_0639689baa",
+  "w": 600,
+  "h": 800
+ },
+ {
+  "idx": 47,
+  "query_class": "miter_saw",
+  "path": "pipeline\\dataset\\train\\miter_saw\\img_miter_saw_highangle_00023_fac975addb.jpg",
+  "stem": "img_miter_saw_highangle_00023_fac975addb",
+  "w": 2240,
+  "h": 1488
+ },
+ {
+  "idx": 48,
+  "query_class": "miter_saw",
+  "path": "pipeline\\dataset\\train\\miter_saw\\img_miter_saw_highangle_00033_7ff94f2283.jpg",
+  "stem": "img_miter_saw_highangle_00033_7ff94f2283",
+  "w": 474,
+  "h": 266
+ },
+ {
+  "idx": 49,
+  "query_class": "miter_saw",
+  "path": "pipeline\\dataset\\train\\miter_saw\\img_miter_saw_highangle_00034_a49040d414.jpg",
+  "stem": "img_miter_saw_highangle_00034_a49040d414",
+  "w": 1588,
+  "h": 1103
+ },
+ {
+  "idx": 50,
+  "query_class": "miter_saw",
+  "path": "pipeline\\dataset\\train\\miter_saw\\img_miter_saw_highangle_00035_87e6c51df1.jpg",
+  "stem": "img_miter_saw_highangle_00035_87e6c51df1",
+  "w": 2048,
+  "h": 1536
+ },
+ {
+  "idx": 51,
+  "query_class": "miter_saw",
+  "path": "pipeline\\dataset\\train\\miter_saw\\img_miter_saw_highangle_00036_c69408015d.jpg",
+  "stem": "img_miter_saw_highangle_00036_c69408015d",
+  "w": 1280,
+  "h": 720
+ },
+ {
+  "idx": 52,
+  "query_class": "miter_saw",
+  "path": "pipeline\\dataset\\train\\miter_saw\\img_miter_saw_highangle_00039_20fb7e2392.jpg",
+  "stem": "img_miter_saw_highangle_00039_20fb7e2392",
+  "w": 1920,
+  "h": 2560
+ },
+ {
+  "idx": 53,
+  "query_class": "panel_saw",
+  "path": "pipeline\\dataset\\train\\panel_saw\\img_panel_saw_highangle_00000_a91354ce64.jpg",
+  "stem": "img_panel_saw_highangle_00000_a91354ce64",
+  "w": 800,
+  "h": 578
+ },
+ {
+  "idx": 54,
+  "query_class": "panel_saw",
+  "path": "pipeline\\dataset\\train\\panel_saw\\img_panel_saw_highangle_00001_f5cce079d9.jpg",
+  "stem": "img_panel_saw_highangle_00001_f5cce079d9",
+  "w": 1000,
+  "h": 400
+ },
+ {
+  "idx": 55,
+  "query_class": "panel_saw",
+  "path": "pipeline\\dataset\\train\\panel_saw\\img_panel_saw_highangle_00002_959d42205f.jpg",
+  "stem": "img_panel_saw_highangle_00002_959d42205f",
+  "w": 800,
+  "h": 500
+ },
+ {
+  "idx": 56,
+  "query_class": "panel_saw",
+  "path": "pipeline\\dataset\\train\\panel_saw\\img_panel_saw_highangle_00011_cb46e39f2f.jpg",
+  "stem": "img_panel_saw_highangle_00011_cb46e39f2f",
+  "w": 612,
+  "h": 459
+ },
+ {
+  "idx": 57,
+  "query_class": "panel_saw",
+  "path": "pipeline\\dataset\\train\\panel_saw\\img_panel_saw_highangle_00014_a92bb95684.jpg",
+  "stem": "img_panel_saw_highangle_00014_a92bb95684",
+  "w": 992,
+  "h": 541
+ },
+ {
+  "idx": 58,
+  "query_class": "panel_saw",
+  "path": "pipeline\\dataset\\train\\panel_saw\\img_panel_saw_highangle_00016_6ff0b86406.jpg",
+  "stem": "img_panel_saw_highangle_00016_6ff0b86406",
+  "w": 1280,
+  "h": 720
+ },
+ {
+  "idx": 59,
+  "query_class": "panel_saw",
+  "path": "pipeline\\dataset\\train\\panel_saw\\img_panel_saw_highangle_00018_5f4b12a32d.jpg",
+  "stem": "img_panel_saw_highangle_00018_5f4b12a32d",
+  "w": 1080,
+  "h": 720
+ },
+ {
+  "idx": 60,
+  "query_class": "panel_saw",
+  "path": "pipeline\\dataset\\train\\panel_saw\\img_panel_saw_highangle_00019_dc417ac3de.jpg",
+  "stem": "img_panel_saw_highangle_00019_dc417ac3de",
+  "w": 800,
+  "h": 533
+ },
+ {
+  "idx": 61,
+  "query_class": "panel_saw",
+  "path": "pipeline\\dataset\\train\\panel_saw\\img_panel_saw_highangle_00020_d839c3beb5.jpg",
+  "stem": "img_panel_saw_highangle_00020_d839c3beb5",
+  "w": 480,
+  "h": 360
+ },
+ {
+  "idx": 62,
+  "query_class": "panel_saw",
+  "path": "pipeline\\dataset\\train\\panel_saw\\img_panel_saw_highangle_00021_8fcac1c0d3.jpg",
+  "stem": "img_panel_saw_highangle_00021_8fcac1c0d3",
+  "w": 1080,
+  "h": 1222
+ },
+ {
+  "idx": 63,
+  "query_class": "panel_saw",
+  "path": "pipeline\\dataset\\train\\panel_saw\\img_panel_saw_highangle_00022_5fd72d9866.jpg",
+  "stem": "img_panel_saw_highangle_00022_5fd72d9866",
+  "w": 1920,
+  "h": 1440
+ },
+ {
+  "idx": 64,
+  "query_class": "panel_saw",
+  "path": "pipeline\\dataset\\train\\panel_saw\\img_panel_saw_highangle_00025_073e151a83.jpg",
+  "stem": "img_panel_saw_highangle_00025_073e151a83",
+  "w": 1024,
+  "h": 702
+ },
+ {
+  "idx": 65,
+  "query_class": "panel_saw",
+  "path": "pipeline\\dataset\\train\\panel_saw\\img_panel_saw_highangle_00026_e8e56bd530.jpg",
+  "stem": "img_panel_saw_highangle_00026_e8e56bd530",
+  "w": 1200,
+  "h": 715
+ },
+ {
+  "idx": 66,
+  "query_class": "panel_saw",
+  "path": "pipeline\\dataset\\train\\panel_saw\\img_panel_saw_highangle_00028_5cf8c033a3.jpg",
+  "stem": "img_panel_saw_highangle_00028_5cf8c033a3",
+  "w": 474,
+  "h": 391
+ },
+ {
+  "idx": 67,
+  "query_class": "panel_saw",
+  "path": "pipeline\\dataset\\train\\panel_saw\\img_panel_saw_highangle_00029_09e18b1333.jpg",
+  "stem": "img_panel_saw_highangle_00029_09e18b1333",
+  "w": 1300,
+  "h": 821
+ },
+ {
+  "idx": 68,
+  "query_class": "panel_saw",
+  "path": "pipeline\\dataset\\train\\panel_saw\\img_panel_saw_highangle_00030_cd7d0f2660.jpg",
+  "stem": "img_panel_saw_highangle_00030_cd7d0f2660",
+  "w": 315,
+  "h": 212
+ },
+ {
+  "idx": 69,
+  "query_class": "panel_saw",
+  "path": "pipeline\\dataset\\train\\panel_saw\\img_panel_saw_highangle_00031_303fd9ef8a.jpg",
+  "stem": "img_panel_saw_highangle_00031_303fd9ef8a",
+  "w": 1024,
+  "h": 768
+ },
+ {
+  "idx": 70,
+  "query_class": "panel_saw",
+  "path": "pipeline\\dataset\\train\\panel_saw\\img_panel_saw_highangle_00032_1d114e8161.jpg",
+  "stem": "img_panel_saw_highangle_00032_1d114e8161",
+  "w": 306,
+  "h": 226
+ },
+ {
+  "idx": 71,
+  "query_class": "panel_saw",
+  "path": "pipeline\\dataset\\train\\panel_saw\\img_panel_saw_highangle_00038_e41051c87f.jpg",
+  "stem": "img_panel_saw_highangle_00038_e41051c87f",
+  "w": 1920,
+  "h": 1080
+ },
+ {
+  "idx": 72,
+  "query_class": "planer",
+  "path": "pipeline\\dataset\\train\\planer\\img_planer_highangle_00000_0f099077e3.jpg",
+  "stem": "img_planer_highangle_00000_0f099077e3",
+  "w": 626,
+  "h": 626
+ },
+ {
+  "idx": 73,
+  "query_class": "planer",
+  "path": "pipeline\\dataset\\train\\planer\\img_planer_highangle_00001_9bfe14f34a.jpg",
+  "stem": "img_planer_highangle_00001_9bfe14f34a",
+  "w": 1380,
+  "h": 921
+ },
+ {
+  "idx": 74,
+  "query_class": "planer",
+  "path": "pipeline\\dataset\\train\\planer\\img_planer_highangle_00002_3567f19f37.jpg",
+  "stem": "img_planer_highangle_00002_3567f19f37",
+  "w": 550,
+  "h": 550
+ },
+ {
+  "idx": 75,
+  "query_class": "planer",
+  "path": "pipeline\\dataset\\train\\planer\\img_planer_highangle_00003_225e3d3eb8.jpg",
+  "stem": "img_planer_highangle_00003_225e3d3eb8",
+  "w": 1600,
+  "h": 1157
+ },
+ {
+  "idx": 76,
+  "query_class": "planer",
+  "path": "pipeline\\dataset\\train\\planer\\img_planer_highangle_00004_ef0a6f7df8.jpg",
+  "stem": "img_planer_highangle_00004_ef0a6f7df8",
+  "w": 768,
+  "h": 578
+ },
+ {
+  "idx": 77,
+  "query_class": "planer",
+  "path": "pipeline\\dataset\\train\\planer\\img_planer_highangle_00015_6824dbb952.jpg",
+  "stem": "img_planer_highangle_00015_6824dbb952",
+  "w": 1024,
+  "h": 1024
+ },
+ {
+  "idx": 78,
+  "query_class": "planer",
+  "path": "pipeline\\dataset\\train\\planer\\img_planer_highangle_00018_956b26e547.jpg",
+  "stem": "img_planer_highangle_00018_956b26e547",
+  "w": 800,
+  "h": 533
+ },
+ {
+  "idx": 79,
+  "query_class": "planer",
+  "path": "pipeline\\dataset\\train\\planer\\img_planer_highangle_00025_bf11a614de.jpg",
+  "stem": "img_planer_highangle_00025_bf11a614de",
+  "w": 474,
+  "h": 431
+ },
+ {
+  "idx": 80,
+  "query_class": "planer",
+  "path": "pipeline\\dataset\\train\\planer\\img_planer_highangle_00030_de91b674c3.jpg",
+  "stem": "img_planer_highangle_00030_de91b674c3",
+  "w": 1022,
+  "h": 575
+ },
+ {
+  "idx": 81,
+  "query_class": "planer",
+  "path": "pipeline\\dataset\\train\\planer\\img_planer_highangle_00035_9ac3acee08.jpg",
+  "stem": "img_planer_highangle_00035_9ac3acee08",
+  "w": 1038,
+  "h": 661
+ },
+ {
+  "idx": 82,
+  "query_class": "table_saw",
+  "path": "pipeline\\dataset\\train\\table_saw\\img_table_saw_highangle_00000_1bfacc642c.jpg",
+  "stem": "img_table_saw_highangle_00000_1bfacc642c",
+  "w": 880,
+  "h": 587
+ },
+ {
+  "idx": 83,
+  "query_class": "table_saw",
+  "path": "pipeline\\dataset\\train\\table_saw\\img_table_saw_highangle_00001_a3a0434393.jpg",
+  "stem": "img_table_saw_highangle_00001_a3a0434393",
+  "w": 1060,
+  "h": 594
+ },
+ {
+  "idx": 84,
+  "query_class": "table_saw",
+  "path": "pipeline\\dataset\\train\\table_saw\\img_table_saw_highangle_00003_53bd5bb63e.jpg",
+  "stem": "img_table_saw_highangle_00003_53bd5bb63e",
+  "w": 800,
+  "h": 800
+ },
+ {
+  "idx": 85,
+  "query_class": "table_saw",
+  "path": "pipeline\\dataset\\train\\table_saw\\img_table_saw_highangle_00005_73fca9573b.jpg",
+  "stem": "img_table_saw_highangle_00005_73fca9573b",
+  "w": 800,
+  "h": 449
+ },
+ {
+  "idx": 86,
+  "query_class": "table_saw",
+  "path": "pipeline\\dataset\\train\\table_saw\\img_table_saw_highangle_00007_4fe7bd799f.jpg",
+  "stem": "img_table_saw_highangle_00007_4fe7bd799f",
+  "w": 669,
+  "h": 446
+ },
+ {
+  "idx": 87,
+  "query_class": "table_saw",
+  "path": "pipeline\\dataset\\train\\table_saw\\img_table_saw_highangle_00013_f772682d12.jpg",
+  "stem": "img_table_saw_highangle_00013_f772682d12",
+  "w": 626,
+  "h": 351
+ },
+ {
+  "idx": 88,
+  "query_class": "table_saw",
+  "path": "pipeline\\dataset\\train\\table_saw\\img_table_saw_highangle_00017_650d3a1a93.jpg",
+  "stem": "img_table_saw_highangle_00017_650d3a1a93",
+  "w": 600,
+  "h": 466
+ },
+ {
+  "idx": 89,
+  "query_class": "table_saw",
+  "path": "pipeline\\dataset\\train\\table_saw\\img_table_saw_highangle_00018_cac4d7b488.jpg",
+  "stem": "img_table_saw_highangle_00018_cac4d7b488",
+  "w": 474,
+  "h": 355
+ },
+ {
+  "idx": 90,
+  "query_class": "table_saw",
+  "path": "pipeline\\dataset\\train\\table_saw\\img_table_saw_highangle_00021_cfffe175c7.jpg",
+  "stem": "img_table_saw_highangle_00021_cfffe175c7",
+  "w": 1600,
+  "h": 1200
+ },
+ {
+  "idx": 91,
+  "query_class": "table_saw",
+  "path": "pipeline\\dataset\\train\\table_saw\\img_table_saw_highangle_00023_bda77905e8.jpg",
+  "stem": "img_table_saw_highangle_00023_bda77905e8",
+  "w": 700,
+  "h": 700
+ },
+ {
+  "idx": 92,
+  "query_class": "table_saw",
+  "path": "pipeline\\dataset\\train\\table_saw\\img_table_saw_highangle_00024_5a27cc95d6.jpg",
+  "stem": "img_table_saw_highangle_00024_5a27cc95d6",
+  "w": 3264,
+  "h": 2448
+ },
+ {
+  "idx": 93,
+  "query_class": "table_saw",
+  "path": "pipeline\\dataset\\train\\table_saw\\img_table_saw_highangle_00030_d55777e233.jpg",
+  "stem": "img_table_saw_highangle_00030_d55777e233",
+  "w": 564,
+  "h": 376
+ },
+ {
+  "idx": 94,
+  "query_class": "table_saw",
+  "path": "pipeline\\dataset\\train\\table_saw\\img_table_saw_highangle_00032_ed3b779885.jpg",
+  "stem": "img_table_saw_highangle_00032_ed3b779885",
+  "w": 736,
+  "h": 552
+ },
+ {
+  "idx": 95,
+  "query_class": "table_saw",
+  "path": "pipeline\\dataset\\train\\table_saw\\img_table_saw_highangle_00033_c56e57199d.jpg",
+  "stem": "img_table_saw_highangle_00033_c56e57199d",
+  "w": 736,
+  "h": 552
+ },
+ {
+  "idx": 96,
+  "query_class": "table_saw",
+  "path": "pipeline\\dataset\\train\\table_saw\\img_table_saw_highangle_00034_5a20cbb5e0.jpg",
+  "stem": "img_table_saw_highangle_00034_5a20cbb5e0",
+  "w": 640,
+  "h": 640
+ },
+ {
+  "idx": 97,
+  "query_class": "table_saw",
+  "path": "pipeline\\dataset\\train\\table_saw\\img_table_saw_highangle_00037_47c6a3ad1b.jpg",
+  "stem": "img_table_saw_highangle_00037_47c6a3ad1b",
+  "w": 700,
+  "h": 467
+ },
+ {
+  "idx": 98,
+  "query_class": "table_saw",
+  "path": "pipeline\\dataset\\train\\table_saw\\img_table_saw_highangle_00039_6eef4e2cdd.jpg",
+  "stem": "img_table_saw_highangle_00039_6eef4e2cdd",
+  "w": 382,
+  "h": 550
+ }
+]

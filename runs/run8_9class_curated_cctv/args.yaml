@@ -1,0 +1,131 @@
+task: segment
+mode: train
+model: C:\Users\Tanushree_i4i\Desktop\ckaude\Krish\runs\run8_9class_curated_cctv\weights\last.pt
+data: C:\Users\Tanushree_i4i\Desktop\ckaude\Krish\datasets\9class\data_9class.yaml
+epochs: 50
+time: null
+patience: 20
+batch: 6
+imgsz: 960
+save: true
+save_period: -1
+cache: ram
+device: '0'
+workers: 0
+project: C:\Users\Tanushree_i4i\Desktop\ckaude\Krish\runs
+name: run8_9class_curated_cctv
+exist_ok: false
+pretrained: true
+cls_remap: true
+optimizer: AdamW
+verbose: true
+seed: 0
+deterministic: true
+single_cls: false
+rect: false
+cos_lr: true
+close_mosaic: 10
+resume: C:\Users\Tanushree_i4i\Desktop\ckaude\Krish\runs\run8_9class_curated_cctv\weights\last.pt
+amp: true
+fraction: 1.0
+profile: false
+freeze: null
+multi_scale: 0.0
+compile: false
+channels_last: false
+overlap_mask: true
+mask_ratio: 4
+dropout: 0.0
+val: true
+split: val
+save_json: false
+conf: null
+iou: 0.7
+max_det: 300
+quantize: null
+dnn: false
+plots: true
+end2end: null
+source: null
+vid_stride: 1
+stream_buffer: false
+visualize: false
+augment: false
+agnostic_nms: false
+classes: null
+retina_masks: false
+embed: null
+show: false
+save_frames: false
+save_txt: false
+save_conf: false
+save_crop: false
+show_labels: true
+show_conf: true
+show_boxes: true
+line_width: null
+format: torchscript
+keras: false
+optimize: false
+dynamic: false
+simplify: true
+opset: null
+workspace: null
+nms: false
+lr0: 0.0005
+lrf: 0.01
+momentum: 0.937
+weight_decay: 0.0005
+warmup_epochs: 2
+warmup_momentum: 0.8
+warmup_bias_lr: 0.1
+distill_model: null
+dis: 6.0
+box: 7.5
+cls: 0.5
+cls_pw: 0.0
+dfl: 1.5
+pose: 12.0
+kobj: 1.0
+rle: 1.0
+angle: 1.0
+dlog: 1.0
+dgrad: 0.5
+dlam: 1.0
+nbs: 64
+hsv_h: 0.015
+hsv_s: 0.6
+hsv_v: 0.5
+degrees: 0.0
+translate: 0.1
+scale: 0.5
+shear: 0.0
+perspective: 0.0002
+flipud: 0.0
+fliplr: 0.5
+bgr: 0.0
+mosaic: 0.5
+mixup: 0.0
+cutmix: 0.0
+copy_paste: 0.3
+copy_paste_mode: flip
+auto_augment: randaugment
+erasing: 0.4
+cfg: null
+tracker: tracktrack.yaml
+augmentations:
+- OpticalDistortion(p=0.35, border_mode=4, distort_limit=(-0.05, 0.25), fill=0.0,
+  fill_mask=0.0, interpolation=1, keypoint_remapping_method='mask', mask_interpolation=0,
+  mode='camera')
+- ImageCompression(p=0.4, compression_type='jpeg', quality_range=(30, 75))
+- 'Downscale(p=0.3, interpolation_pair={''upscale'': 0, ''downscale'': 0}, scale_range=(0.4,
+  0.75))'
+- GaussNoise(p=0.3, mean_range=(0.0, 0.0), noise_scale_factor=1.0, per_channel=True,
+  std_range=(0.012, 0.028))
+- "OneOf([\n  MotionBlur(p=0.5, allow_shifted=True, angle_range=(0.0, 360.0), blur_limit=(3,
+  7), direction_range=(-1.0, 1.0)),\n  GaussianBlur(p=0.5, blur_limit=(3, 5), sigma_limit=(0.5,
+  3.0)),\n], p=0.15)"
+- ToGray(p=0.05, method='weighted_average', num_output_channels=3)
+- RandomBrightnessContrast(p=0.3, brightness_by_max=True, brightness_limit=(-0.2,
+  0.2), contrast_limit=(-0.2, 0.2), ensure_safe_range=False)
+save_dir: C:\Users\Tanushree_i4i\Desktop\ckaude\Krish\runs\run8_9class_curated_cctv

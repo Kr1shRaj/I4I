@@ -1,0 +1,8 @@
+# FROZEN 2026-10-21: this folder is the permanent held-out CCTV evaluation benchmark (docs/cctv_benchmark.md).
+# Every recording is 'test', so build_cctv_hybrid_dataset.py can never put these frames into a training list.
+# Do NOT change these to train/val. run7 (archived) trained on cam05 and memorised it.
+ch05_20260928130326: {camera: cam05, split: test}
+panel_saw_hydraulic_lift: {camera: cam05, split: test}
+working_panel_saw: {camera: cam05, split: test}
+ch03_20260907165321: {camera: cam03, split: test}
+ch03_20260924144142: {camera: cam03, split: test}

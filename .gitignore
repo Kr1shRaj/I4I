@@ -9,6 +9,9 @@ good_bad/
 project.tm*/
 train-2/
 *.pt
+*.pth
+*.cache
+*.zip
 
 # Logs and scratch files
 logs/

@@ -1,0 +1,18 @@
+# EVALUATION ONLY: the frozen factory CCTV benchmark (docs/cctv_benchmark.md). Never use for training.
+# `train` points at the catalog list only because Ultralytics requires the key.
+# Use: YOLO(weights).val(data="datasets/9class/data_9class_cctv_benchmark.yaml", imgsz=960)
+train: train_oversampled_9class.txt
+val: cctv_benchmark.txt
+test: cctv_benchmark.txt
+
+nc: 9
+names:
+  0: panel_saw
+  1: hydraulic_press
+  2: table_saw
+  3: planer
+  4: jointer
+  5: band_saw
+  6: miter_saw
+  7: edge_banding_machine
+  8: fire_extinguisher

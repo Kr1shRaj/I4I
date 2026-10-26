@@ -1,0 +1,193 @@
+# Annotation decisions for the 99 gate-accepted high-angle images (datasets/highangle/index.json).
+# Reviewed by Claude on gridded review sheets and full-resolution zooms, 2026-10-21 (not a human annotator).
+# Classes follow image content, never the search keyword. Policy: docs/label_policy.md.
+# accept: boxes = [class, x1, y1, x2, y2] (normalised) -> SAM 2.1 Large box prompts, one per instance.
+# reject reasons: aerial (satellite/drone, no labelable instance), collage (several photos / infographic / slide),
+#   render (AI or CAD image), closeup (a part only, <40% of a machine), no_target (none of the 9 classes),
+#   ambiguous (class or extent unclear: log band mills, moulders, workstations with built-in saws),
+#   dense (rows of small instances or unidentifiable background machines that cannot all be labelled).
+# Class-boundary calls (checked against catalog samples): horizontal metal-cutting band saws = band_saw;
+#   vertical, sliding-table and beam panel saws = panel_saw; mechanical/hydraulic frame presses and
+#   multi-platen hot presses = hydraulic_press.
+
+images:
+  0: {status: reject, note: "ambiguous: horizontal log band mill, saw head vs carriage track extent unclear"}
+  1: {status: reject, note: "closeup: band saw blade guide"}
+  2:
+    status: accept
+    boxes: [[band_saw, 0.29, 0.03, 0.88, 0.48]]
+    note: "horizontal metal band saw (Cosen); roller conveyor excluded"
+  3:
+    status: accept
+    boxes: [[band_saw, 0.19, 0.10, 0.68, 0.53], [band_saw, 0.84, 0.21, 0.99, 0.46], [fire_extinguisher, 0.075, 0.25, 0.10, 0.335]]
+    note: "two horizontal band saws + extinguisher on the pillar"
+  4: {status: reject, note: "dense: cluttered shop, blades on floor, unidentifiable machines"}
+  5: {status: reject, note: "sam_fail: SAM 2.1 L traces the drawer cabinet, not the home-made saw; needs hand drawing"}
+
+  6: {status: reject, note: "ambiguous: band resaw / sawmill"}
+  7:
+    status: accept
+    boxes: [[miter_saw, 0.00, 0.30, 0.90, 0.98]]
+  8: {status: reject, note: "closeup: band saw blade and jig only"}
+  9: {status: reject, note: "no_target: carton/printing machines"}
+  10: {status: reject, note: "ambiguous: band resaw line with people"}
+  11: {status: reject, note: "no_target: CNC nesting router with roller table"}
+  12:
+    status: accept
+    boxes: [[edge_banding_machine, 0.06, 0.18, 0.63, 0.80]]
+    note: "separate green return conveyor excluded"
+  13: {status: reject, note: "dense: edge-bander line with unidentifiable machines behind"}
+  14:
+    status: accept
+    boxes: [[edge_banding_machine, 0.00, 0.02, 0.62, 0.68]]
+    note: "curved return conveyor excluded"
+  15: {status: reject, note: "dense: several small edge banders merged in one view"}
+  16: {status: reject, note: "closeup: control panel (getty)"}
+  17:
+    status: accept
+    boxes: [[edge_banding_machine, 0.40, 0.00, 0.96, 0.88], [edge_banding_machine, 0.24, 0.12, 0.42, 0.73],
+            [edge_banding_machine, 0.16, 0.21, 0.27, 0.62], [edge_banding_machine, 0.10, 0.24, 0.18, 0.56]]
+    note: "row of four edge banders, one instance each"
+  18: {status: reject, note: "dense: extinguisher production line, unfinished shells"}
+  19: {status: reject, note: "ambiguous: large red cylinder on trolley, not clearly an extinguisher"}
+  20: {status: reject, note: "dense: shelves of extinguishers, background rows blurred"}
+  21: {status: reject, note: "render: AI fire-safety shop"}
+  22: {status: reject, note: "closeup: extinguisher production, caption overlay"}
+  23: {status: reject, note: "ambiguous: press built into a mezzanine, extent unclear"}
+  24:
+    status: accept
+    boxes: [[hydraulic_press, 0.08, 0.06, 0.50, 0.97]]
+    note: "4-column press; separate power unit excluded; background press too hidden by crane hose"
+  25: {status: reject, note: "no_target: roller conveyors and stacker"}
+  26: {status: reject, note: "closeup: unidentified machine section"}
+  27: {status: reject, note: "collage: hot-press line with banner and logos"}
+  28: {status: reject, note: "aerial"}
+  29: {status: reject, note: "aerial: factory hall, instances too small"}
+  30: {status: reject, note: "aerial"}
+  31:
+    status: accept
+    boxes: [[hydraulic_press, 0.68, 0.16, 0.87, 0.73]]
+  32:
+    status: accept
+    boxes: [[hydraulic_press, 0.33, 0.04, 0.53, 0.79], [hydraulic_press, 0.24, 0.19, 0.36, 0.76], [hydraulic_press, 0.60, 0.18, 0.76, 0.62]]
+    note: "three frame presses"
+  33:
+    status: accept
+    boxes: [[hydraulic_press, 0.25, 0.07, 0.88, 0.92]]
+    note: "multi-platen press; hydraulic unit and cabinet excluded"
+  34:
+    status: accept
+    boxes: [[hydraulic_press, 0.09, 0.05, 0.72, 0.93], [hydraulic_press, 0.69, 0.38, 0.99, 0.73]]
+  35:
+    status: accept
+    boxes: [[hydraulic_press, 0.17, 0.02, 0.95, 0.99]]
+  36: {status: reject, note: "no_target: timber stacks and a moulder"}
+  37: {status: reject, note: "no_target: edge sander"}
+  38: {status: reject, note: "no_target: dark wide factory"}
+  39: {status: reject, note: "dense: drill press foreground, small unidentifiable machines behind"}
+  40: {status: reject, note: "ambiguous: jointer vs planer"}
+  41: {status: reject, note: "ambiguous: router table / jobsite saw, jointer behind unclear"}
+  42: {status: reject, note: "collage: two photos side by side"}
+  43: {status: reject, note: "collage: advert with logos"}
+  44: {status: reject, note: "dense: high-angle shop, machines too small to identify"}
+  45: {status: reject, note: "closeup: lathe work (alamy)"}
+  46:
+    status: accept
+    boxes: [[miter_saw, 0.20, 0.28, 0.43, 0.49]]
+  47: {status: reject, note: "ambiguous: mitre vs radial-arm saws side by side"}
+  48:
+    status: accept
+    boxes: [[miter_saw, 0.47, 0.44, 0.84, 0.97]]
+    note: "photo-realistic render; kept, single clear instance"
+  49: {status: reject, note: "closeup: mitre saw mostly hidden by boards"}
+  50:
+    status: accept
+    boxes: [[miter_saw, 0.27, 0.04, 0.99, 0.98]]
+  51:
+    status: accept
+    boxes: [[miter_saw, 0.13, 0.25, 0.57, 0.97]]
+    note: "title text overlay on the right"
+  52:
+    status: accept
+    boxes: [[miter_saw, 0.57, 0.27, 1.00, 0.75]]
+  53: {status: reject, note: "no_target: CNC router with lift table"}
+  54: {status: reject, note: "dense: panel line from above"}
+  55: {status: reject, note: "no_target: CNC nesting line"}
+  56: {status: reject, note: "no_target: warehouse"}
+  57: {status: reject, note: "render"}
+  58:
+    status: accept
+    boxes: [[panel_saw, 0.00, 0.30, 0.78, 0.98]]
+    note: "spindle moulder at the right edge is not a target class"
+  59:
+    status: accept
+    boxes: [[panel_saw, 0.07, 0.31, 0.84, 0.80]]
+  60:
+    status: accept
+    boxes: [[panel_saw, 0.00, 0.60, 1.00, 1.00]]
+  61:
+    status: accept
+    boxes: [[panel_saw, 0.49, 0.40, 1.00, 0.93], [panel_saw, 0.00, 0.44, 0.24, 0.67]]
+    note: "480x360 source, CCTV-like resolution"
+  62:
+    status: accept
+    boxes: [[table_saw, 0.66, 0.55, 1.00, 0.84], [miter_saw, 0.49, 0.42, 0.62, 0.54]]
+  63:
+    status: accept
+    boxes: [[table_saw, 0.00, 0.47, 0.34, 0.74]]
+    note: "wide-belt sander on the right is not a target class"
+  64: {status: reject, note: "closeup: panel stack feeding"}
+  65: {status: reject, note: "dense: hall of beam saws"}
+  66: {status: reject, note: "closeup: vertical panel saw cut off"}
+  67: {status: reject, note: "closeup (alamy)"}
+  68:
+    status: accept
+    boxes: [[panel_saw, 0.04, 0.00, 1.00, 0.99], [fire_extinguisher, 0.00, 0.31, 0.065, 0.48], [fire_extinguisher, 0.00, 0.56, 0.06, 0.78]]
+    note: "vertical panel saw fills the frame; two extinguishers at the left edge"
+  69: {status: reject, note: "collage: inset photo on a slide"}
+  70:
+    status: accept
+    boxes: [[panel_saw, 0.36, 0.34, 0.87, 0.93]]
+    note: "separate wooden support table excluded"
+  71: {status: reject, note: "closeup: vertical saw cut off at the edge"}
+  72: {status: reject, note: "closeup: production line"}
+  73: {status: reject, note: "dense: sawing line from above"}
+  74: {status: reject, note: "collage + moulder (not a planer)"}
+  75: {status: reject, note: "dense: hall with unidentifiable machines, extinguisher too small"}
+  76: {status: reject, note: "render"}
+  77: {status: reject, note: "render"}
+  78: {status: reject, note: "dense: workshop, machines too small"}
+  79: {status: reject, note: "ambiguous: four-sided moulder"}
+  80: {status: reject, note: "render"}
+  81: {status: reject, note: "collage"}
+  82: {status: reject, note: "dense: panel line from above"}
+  83: {status: reject, note: "no_target: timber warehouse"}
+  84: {status: reject, note: "collage: infographic"}
+  85: {status: reject, note: "render"}
+  86: {status: reject, note: "dense: school workshop from above, machines too small"}
+  87: {status: reject, note: "aerial"}
+  88:
+    status: accept
+    boxes: [[table_saw, 0.27, 0.56, 0.58, 0.87], [band_saw, 0.69, 0.32, 0.83, 0.95], [planer, 0.83, 0.62, 1.00, 0.99],
+            [fire_extinguisher, 0.168, 0.44, 0.192, 0.505], [miter_saw, 0.00, 0.43, 0.07, 0.59]]
+    note: "home workshop, five instances"
+  89: {status: reject, note: "ambiguous: saw with roller tables, extent unclear"}
+  90:
+    status: accept
+    boxes: [[table_saw, 0.33, 0.34, 0.92, 0.94], [jointer, 0.09, 0.37, 0.28, 0.79], [miter_saw, 0.03, 0.21, 0.085, 0.35]]
+  91: {status: reject, note: "ambiguous: saw built into a cabinet"}
+  92: {status: reject, note: "ambiguous: saw built into a workbench"}
+  93:
+    status: accept
+    boxes: [[table_saw, 0.44, 0.44, 1.00, 0.93], [miter_saw, 0.00, 0.38, 0.32, 0.72], [band_saw, 0.22, 0.24, 0.31, 0.55],
+            [planer, 0.41, 0.34, 0.50, 0.54]]
+  94: {status: reject, note: "sam_fail: SAM 2.1 L returns only the fence rail of the table saw; needs hand drawing"}
+  95: {status: reject, note: "ambiguous: benchtop saw built into a workbench"}
+  96:
+    status: accept
+    boxes: [[miter_saw, 0.41, 0.29, 0.53, 0.46]]
+    note: "foreground workbench is a useful non-table-saw example"
+  97:
+    status: accept
+    boxes: [[table_saw, 0.05, 0.31, 0.52, 0.93], [miter_saw, 0.05, 0.10, 0.22, 0.34]]
+  98: {status: reject, note: "collage"}

@@ -1,0 +1,44 @@
+train: train_oversampled_38class.txt
+val: valid/images
+test: test/images
+
+nc: 38
+names:
+  0: cnc_milling
+  1: lathe
+  2: milling
+  3: drilling
+  4: grinding
+  5: hydraulic_press
+  6: injection_molding
+  7: conveyor
+  8: packaging_machine
+  9: forklift
+  10: control_panel
+  11: table_saw
+  12: band_saw
+  13: miter_saw
+  14: panel_saw
+  15: planer
+  16: jointer
+  17: spindle_moulder
+  18: wood_lathe
+  19: sanding_machines
+  20: cnc_router
+  21: fire_extinguisher
+  22: crane
+  23: air_compressor
+  24: drum_sander
+  25: dust_collector
+  26: edge_banding_machine
+  27: emergency_exit_sign
+  28: first_aid_station
+  29: glue_spreader
+  30: mortiser
+  31: overhead_hoist
+  32: pallet_jack
+  33: platform_scale
+  34: ppe_station
+  35: robotic_arm
+  36: storage_racking
+  37: veneer_press

@@ -95,15 +95,50 @@ logs/                    ← Per-stage JSON logs and annotation audit outputs
 
 ## Model Training & Validation Results
 
-Initial validation metrics from the YOLO instance-segmentation training run (`train-2/`, 97 epochs on GPU):
+### 1. 9-Class Curated CCTV Fine-Tune (`run8_9class_curated_cctv` — Champion Model)
+Trained for 50 epochs at `imgsz=960` with full SAM 2.1 dataset curation (quarantined mislabeled images, corrected masks with SAM 2.1 Large, 107 look-alike hard negatives, and CCTV codec/sensor/lens augmentations).
 
-| Metric Group | Metric | Score |
-| :--- | :--- | :--- |
-| **Bounding Box** | Precision (B) | 87.6% |
-| | Recall (B) | 77.1% |
-| | mAP@50 (B) | 83.1% |
-| | mAP@50-95 (B) | 74.8% |
-| **Polygon Mask** | Precision (M) | 86.9% |
-| | Recall (M) | 75.9% |
-| | mAP@50 (M) | 81.1% |
-| | mAP@50-95 (M) | 70.5% |
+| Metric Group | Metric | Base (Run 5) | Curated Run 8 | Absolute Gain |
+| :--- | :--- | :---: | :---: | :---: |
+| **Polygon Mask** | **mAP@50 (M)** | 74.1% | **86.7%** 🏆 | **+12.6%** |
+| | **mAP@50-95 (M)** | 61.5% | **76.0%** 🏆 | **+14.5%** |
+| | Precision (M) | 77.4% | **89.2%** | +11.8% |
+| | Recall (M) | 70.3% | **78.5%** | +8.2% |
+| **Bounding Box** | **mAP@50 (B)** | 78.9% | **87.9%** 🏆 | **+9.0%** |
+| | **mAP@50-95 (B)** | 60.9% | **77.0%** 🏆 | **+16.1%** |
+| | Precision (B) | 79.3% | **89.5%** | +10.2% |
+| | Recall (B) | 71.5% | **78.8%** | +7.3% |
+
+#### Per-Class Performance Breakdown (450 Validation Images)
+| Class Name | Instances | Mask mAP50 | Mask mAP50-95 | Box mAP50 |
+| :--- | :---: | :---: | :---: | :---: |
+| `jointer` | 40 | **97.2%** | **93.3%** | **97.2%** |
+| `hydraulic_press` | 58 | **95.8%** | **81.8%** | **97.3%** |
+| `table_saw` | 41 | **91.8%** | **81.4%** | **93.5%** |
+| `band_saw` | 62 | **91.1%** | **85.1%** | **93.6%** |
+| `planer` | 36 | **83.5%** | **77.8%** | **83.5%** |
+| `panel_saw` | 53 | **83.0%** | **71.0%** | **88.0%** |
+| `edge_banding_machine` | 22 | **80.5%** | **68.6%** | **80.5%** |
+| `miter_saw` | 47 | **79.3%** | **66.4%** | **81.0%** |
+| `fire_extinguisher` | 109 | **78.0%** | **58.9%** | **76.0%** |
+
+---
+
+## Real-World Factory CCTV Benchmark Evaluation
+
+Evaluated against the frozen 328-frame surveillance benchmark (`docs/cctv_benchmark.md`, Camera 03 & Camera 05):
+
+* **~75% Reduction in False Alarms:** False detections dropped from 34 (run5) down to 8 (run8). Hallucinated whole-frame `edge_banding_machine` boxes were completely eliminated.
+* **Hard Negative Rejection:** Lockers, workbenches, metal cabinets, and chemical drums are cleanly rejected with zero false positives.
+* **Key Perspective Finding:** While pixel degradation (blur, sensor noise, H.264 compression) was resolved by Albumentations augmentations, steep 60° bird's-eye ceiling perspectives cause panel saws to resemble table saws. Future iterations require genuine high-angle training captures.
+* Detailed evaluation report: [`docs/run8_cctv_benchmark_eval.md`](docs/run8_cctv_benchmark_eval.md).
+
+---
+
+## Project Structure & Tools
+
+* `scripts/train.py` — Training engine with explicit AdamW, cosine annealing, and custom CCTV lens/compression transforms.
+* `scripts/tools/eval_cctv_benchmark.py` — Automated evaluation pipeline for real-world surveillance benchmarks.
+* `scripts/tools/parse_user_curation.py` — Curation parser for dataset sanitization.
+* `docs/viewer/` — Interactive web-based dataset and annotation review gallery.
+* `configs/` — Dataset splits and 9-class YAML configuration files.
