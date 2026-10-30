@@ -45,6 +45,7 @@ load_dotenv()
 
 import roboflow
 from pipeline.config import ALL_CLASS_NAMES, CLASSES, DATASET_TRAIN_DIR, LOGS_DIR
+from pipeline import progress
 from pipeline.roboflow_workflow import run_workflow
 
 WORKSPACE_SLUG = "kkr-r543n"
@@ -354,9 +355,12 @@ def main():
     print(f"Target classes ({len(target_classes)}): {', '.join(target_classes)}\n", flush=True)
 
     summary = []
-    for cls_name in target_classes:
+    for i, cls_name in enumerate(target_classes):
+        progress.class_start(cls_name, i, len(target_classes))
         res = process_class(proj, cls_name, max_workers=args.workers)
         summary.append(res)
+        progress.class_end(cls_name, total_images=res["total"], successful=res["ok"], skipped_review=res["skipped"],
+                           failed=res["failed"])
 
     print("\n" + "=" * 75, flush=True)
     print("FINAL UPLOAD SUMMARY ACROSS PROCESSED CLASSES", flush=True)
@@ -390,4 +394,5 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    with progress.run("upload_polygon_annotations"):
+        main()

@@ -42,6 +42,7 @@ from pipeline.config import (
     ALL_CLASS_NAMES,
     confusable_classes,
 )
+from pipeline import progress
 
 MANIFEST_DEFAULT = ROOT / "reference_manifest.csv"
 
@@ -257,4 +258,5 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-    main()
+    with progress.run("stage1_ingest_refs"):
+        main()

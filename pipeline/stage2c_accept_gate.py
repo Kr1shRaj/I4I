@@ -37,6 +37,7 @@ from PIL import Image
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from pipeline.config import CLASSES, CLIP_MODEL_NAME, CLIP_PRETRAINED, DATASET_TRAIN_DIR, LOGS_DIR, TARGET_9_CLASS_NAMES
+from pipeline import progress
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]          # Krish/
 CATALOG_GLOBS = [PROJECT_ROOT / "datasets" / "source_38class" / s / "images" for s in ("train", "valid", "test")]
@@ -170,4 +171,5 @@ def main() -> int:
 
 
 if __name__ == "__main__":
-    sys.exit(main())
+    with progress.run("stage2c_accept_gate"):
+        sys.exit(main())

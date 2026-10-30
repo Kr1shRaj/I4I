@@ -41,6 +41,7 @@ from pipeline.config import (
     MIN_RESOLUTION,
     PHASH_DUPLICATE_THRESHOLD,
 )
+from pipeline import progress
 
 
 def clean_class(cls_name: str) -> dict:
@@ -142,9 +143,11 @@ def main() -> None:
     print("=" * 65)
 
     results = []
-    for cls_name in tqdm(target_names, desc="Cleaning", unit="class"):
+    for i, cls_name in enumerate(tqdm(target_names, desc="Cleaning", unit="class")):
+        progress.class_start(cls_name, i, len(target_names))
         res = clean_class(cls_name)
         results.append(res)
+        progress.class_end(cls_name, raw_count=res["raw_count"], final_count=res["final_count"])
 
     # Save log
     LOGS_DIR.mkdir(parents=True, exist_ok=True)
@@ -188,4 +191,5 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-    main()
+    with progress.run("stage3_clean"):
+        main()

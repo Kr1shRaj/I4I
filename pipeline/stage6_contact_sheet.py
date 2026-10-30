@@ -37,6 +37,7 @@ from pipeline.config import (
     LOGS_DIR,
     class_by_name,
 )
+from pipeline import progress
 
 OUTPUT_DIR = LOGS_DIR / "contact_sheets"
 
@@ -170,9 +171,11 @@ def main() -> None:
     print("=" * 65)
 
     results = []
-    for cls_name in tqdm(target_names, desc="Contact Sheets", unit="class"):
+    for i, cls_name in enumerate(tqdm(target_names, desc="Contact Sheets", unit="class")):
+        progress.class_start(cls_name, i, len(target_names))
         res = process_class(cls_name)
         results.append(res)
+        progress.class_end(cls_name)
 
     print("\n" + "=" * 65)
     print("CONTACT SHEET SUMMARY")
@@ -183,4 +186,5 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-    main()
+    with progress.run("stage6_contact_sheet"):
+        main()

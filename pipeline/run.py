@@ -43,6 +43,7 @@ from pipeline.config import (
     SCRAPE_CAP_PER_CLASS,
     class_by_name,
 )
+from pipeline import progress
 
 # ---------------------------------------------------------------------------
 # Constants
@@ -586,4 +587,5 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-    main()
+    with progress.run("run"):
+        main()

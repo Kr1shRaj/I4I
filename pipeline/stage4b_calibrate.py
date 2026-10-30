@@ -47,6 +47,7 @@ from pipeline.config import (
     REFERENCE_IMAGES_DIR,
     class_by_name,
 )
+from pipeline import progress
 
 try:
     import open_clip
@@ -205,4 +206,5 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-    main()
+    with progress.run("stage4b_calibrate"):
+        main()

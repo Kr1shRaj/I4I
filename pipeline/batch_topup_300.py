@@ -38,6 +38,7 @@ from pipeline.config import (
     LOGS_DIR,
     MIN_RESOLUTION,
 )
+from pipeline import progress
 from pipeline.stage3_clean import clean_class
 from pipeline.stage4_clip_filter import filter_class, load_model
 from pipeline.stage5_diversity_kselect import process_class
@@ -715,4 +716,5 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    with progress.run("batch_topup_300"):
+        main()

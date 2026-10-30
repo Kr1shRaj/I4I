@@ -48,6 +48,7 @@ from pipeline.config import (
     REFERENCE_IMAGES_DIR,
     class_by_name,
 )
+from pipeline import progress
 
 try:
     import open_clip
@@ -292,9 +293,11 @@ def main() -> None:
     print("=" * 65)
 
     results = []
-    for cls_name in tqdm(target_names, desc="CLIP Filtering", unit="class"):
+    for i, cls_name in enumerate(tqdm(target_names, desc="CLIP Filtering", unit="class")):
+        progress.class_start(cls_name, i, len(target_names))
         res = filter_class(cls_name, model, preprocess, tokenizer, device, args.coarse_thresh, args.fine_thresh)
         results.append(res)
+        progress.class_end(cls_name, input_count=res["input_count"], final_accepted=res["final_accepted"])
 
     LOGS_DIR.mkdir(parents=True, exist_ok=True)
     log_path = LOGS_DIR / "stage4_clip_filter_log.json"
@@ -332,4 +335,5 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-    main()
+    with progress.run("stage4_clip_filter"):
+        main()

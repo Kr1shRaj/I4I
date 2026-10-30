@@ -52,6 +52,7 @@ from pipeline.config import (
     LOGS_DIR,
     class_by_name,
 )
+from pipeline import progress
 
 try:
     import open_clip
@@ -231,9 +232,11 @@ def main() -> None:
     results = []
     flagged_classes = []
 
-    for cls_name in tqdm(target_names, desc="K-Selection", unit="class"):
+    for i, cls_name in enumerate(tqdm(target_names, desc="K-Selection", unit="class")):
+        progress.class_start(cls_name, i, len(target_names))
         res = process_class(cls_name, model, preprocess, tokenizer, device, args.sim_thresh)
         results.append(res)
+        progress.class_end(cls_name, input_count=res["input_count"], selected_count=res["selected_count"])
         if res["flagged"]:
             flagged_classes.append(res)
 
@@ -287,4 +290,5 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-    main()
+    with progress.run("stage5_diversity_kselect"):
+        main()

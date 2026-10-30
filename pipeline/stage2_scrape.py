@@ -59,6 +59,7 @@ from pipeline.config import (
     QUERY_TEMPLATES,
     SCRAPE_CAP_PER_CLASS,
 )
+from pipeline import progress
 
 # ---------------------------------------------------------------------------
 # DuckDuckGo import  (graceful fallback between ddgs and duckduckgo_search)
@@ -285,6 +286,7 @@ def scrape_class(
                     global_idx += 1
                     downloaded_this_template += 1
                     total_downloaded += 1
+                    progress.tick(total_downloaded, remaining_cap, cls=name, template=t_idx + 1)
                     break  # move to next result
 
         template_counts[template] = {
@@ -373,9 +375,12 @@ def main() -> None:
     print("=" * 65)
 
     results = []
-    for cls in tqdm(target_classes, desc="Classes", unit="class", position=0, leave=True):
+    for i, cls in enumerate(tqdm(target_classes, desc="Classes", unit="class", position=0, leave=True)):
+        progress.class_start(cls["name"], i, len(target_classes))
         result = scrape_class(cls, resume=args.resume, cap=args.cap, templates=templates, exclude=exclude, tag=tag)
         results.append(result)
+        progress.class_end(cls["name"], downloaded=result.get("total_downloaded", 0),
+                           final_count=result.get("final_count", result.get("existing")), tag=tag)
 
     # Save log
     LOGS_DIR.mkdir(parents=True, exist_ok=True)
@@ -420,4 +425,5 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-    main()
+    with progress.run("stage2_scrape"):
+        main()
